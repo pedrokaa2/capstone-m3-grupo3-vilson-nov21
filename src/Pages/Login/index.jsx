@@ -14,10 +14,12 @@ const Login = () => {
     password: yup
       .string()
       .required("Senha obrigatória")
-      .min(
-        8,
-        "Minimo 8 caracters, ao menos uma letra maiúscula e minúscula, número e caracter especial)"
-      ),
+      .min(8, "Deve conter ao menos 8 dígitos")
+      .matches(/[a-z]/, "Deve conter uma letra minúscula")
+      .matches(/[A-Z]/, "Deve conter uma letra maiúscula")
+      .matches(/[0-9]/, "Deve conter um número")
+      .matches(/\W/, "Deve conter símbolos")
+      .matches(/^(?!.*\s).{0,}$/, "Não pode conter espaços"),
   });
   const {
     register,
