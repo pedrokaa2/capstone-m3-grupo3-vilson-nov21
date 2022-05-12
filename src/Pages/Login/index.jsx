@@ -5,9 +5,14 @@ import { toast } from "react-toastify";
 import { Redirect } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import { useHistory } from "react-router-dom";
+import { Link } from "react-router-dom";
+import { useAuthenticated } from "../../Providers/authenticated";
 
 const Login = () => {
+  const { authenticated, login } = useAuthenticated();
+
   const history = useHistory();
+
   const formSchema = yup.object().shape({
     email: yup.string().required("Email obrigatório").email("Email inválido"),
 
@@ -29,23 +34,23 @@ const Login = () => {
     resolver: yupResolver(formSchema),
   });
 
-  const btnRegister = () => {
-    history.push("/register");
+  const handleLogin = (data) => {
+    login(data, history);
   };
 
-  const btnLogin = (data) => {
-    console.log("oi");
-  };
+  if (authenticated) {
+    return <Redirect to="/home" />;
+  }
 
   return (
     <div>
       <h1>LOGIN</h1>
 
       <span>
-        Não tem uma conta? Faça seu <span onClick={btnRegister}>cadastro</span>
+        Não tem uma conta? Faça seu <Link to="/signup">cadastro</Link>
       </span>
 
-      <form onSubmit={handleSubmit(btnLogin)}>
+      <form onSubmit={handleSubmit(handleLogin)}>
         <input type="text" placeholder="EMAIL" {...register("email")} />
 
         <span>{errors.email?.message}</span>
@@ -55,7 +60,7 @@ const Login = () => {
         <span>{errors.password?.message}</span>
 
         <div>
-          <button>ENTRAR</button>
+          <button type="submit">ENTRAR</button>
         </div>
       </form>
     </div>
