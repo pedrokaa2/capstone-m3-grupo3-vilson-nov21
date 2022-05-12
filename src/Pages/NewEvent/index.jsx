@@ -1,5 +1,6 @@
-import { Header, Logo, SpanNovoEvento, Cover } from "./style";
+import { Header, Logo, SpanNovoEvento, Cover, Form, DivForm } from "./style";
 import LogoImg from "../../assets/boralalogo.png";
+import Input from "../../components/Input";
 
 const NewEvent = () => {
   return (
@@ -9,6 +10,17 @@ const NewEvent = () => {
         <SpanNovoEvento>NOVO EVENTO</SpanNovoEvento>
       </Header>
       <Cover></Cover>
+      <Form>
+        <DivForm>
+          <Input placeholder={"NOME"} />
+          <Input placeholder={"DATA"} type="data" />
+          <Input placeholder={"CIDADE"} />
+        </DivForm>
+        <DivForm>
+          <Input placeholder={"URL DA IMAGEM"} />
+          <Input placeholder={"SITE DO EVENTO"} type="data" />
+        </DivForm>
+      </Form>
     </>
   );
 };

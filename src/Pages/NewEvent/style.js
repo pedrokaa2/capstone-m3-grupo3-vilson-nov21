@@ -44,6 +44,23 @@ export const Cover = styled.div`
   }
 `;
 
+export const Form = styled.form`
+  margin-top: 32px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  @media (min-width: 764px) {
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: row;
+  }
+`;
+
+export const DivForm = styled.div`
+  &:nth-child(odd) {
+    margin-right: 10px;
+  }
+`;
 // --orange: #FF5203;
 // --blue: #27B5DD;
 // --lightblue: #9ED9EA;
