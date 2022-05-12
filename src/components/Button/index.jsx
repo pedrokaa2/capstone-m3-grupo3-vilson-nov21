@@ -2,7 +2,7 @@ import { Container } from "./style";
 
 const Button = ({ children, width, height, ...rest }) => {
   return (
-  <Container width={width} height={height}>{children}</Container>
+  <Container {...rest} width={width} height={height}>{children}</Container>
   );
 };
 
