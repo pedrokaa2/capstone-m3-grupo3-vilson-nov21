@@ -3,6 +3,8 @@ import { yupResolver } from "@hookform/resolvers/yup";
 import { Redirect, useHistory } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import { useAuthenticated } from "../../Providers/authenticated";
+import { useContext } from "react";
+import { EventContext } from "../../Providers/event";
 
 import {
   Header,
@@ -18,8 +20,6 @@ import {
 import LogoImg from "../../assets/boralalogo.png";
 import Input from "../../components/Input";
 import Button from "../../components/Button";
-import { useContext } from "react";
-import { EventContext } from "../../Providers/event";
 
 const NewEvent = () => {
   const { authenticated } = useAuthenticated();
@@ -47,7 +47,7 @@ const NewEvent = () => {
     eventRegister(data, history);
   };
 
-  if (!authenticated) {
+  if (!localStorage.getItem("@borala:token")) {
     return <Redirect to="/login" />;
   }
 
