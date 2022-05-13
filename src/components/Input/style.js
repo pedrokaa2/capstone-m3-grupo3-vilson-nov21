@@ -8,9 +8,16 @@ export const InputContainer = styled.div `
   height: 52px;
   width: 80%;
   transition: 0.4s;
-  margin-bottom: 25px;
+  margin: 0 auto;
+  /* margin-left: 50px; */
+ 
 
-  @media (min-width: 900px) {
+  ${(props) =>
+    props.isWrong &&
+    `
+   border-color: var(--orange);
+  `}
+  @media (min-width: 1024px) {
     width: 338px;
     margin-bottom: 20px;
   }
@@ -24,3 +31,9 @@ export const Inputs = styled.input `
   width: 100%;
   height: 100%;
 `;
+
+export const ErrorDiv = styled.div`
+  margin-top: 10px;
+  color: var(--orange)
+`;
+
