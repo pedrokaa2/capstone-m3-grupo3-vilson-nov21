@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const Container = styled.button`
+export const Container = styled.button `
   background: var(--darkblue);
   color: var(--white);
   border-radius: 15px;
@@ -13,6 +13,6 @@ export const Container = styled.button`
 
   @media (min-width: 1024px) {
     height: ${(props) => (props.height ? props.height : "60px")};
-    width: ${(props) => (props.width ? props.width : "300px")};
+    width: ${(props) => (props.width ? props.width : "338px")};
   }
 `;

@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const InputContainer = styled.div`
+export const InputContainer = styled.div `
   background: var(--white);
   border-radius: 10px;
   border: 2px solid var(--darkblue);
@@ -13,7 +13,7 @@ export const InputContainer = styled.div`
  
 
   ${(props) =>
-    props.isErrored &&
+    props.isWrong &&
     `
    border-color: var(--orange);
   `}
@@ -23,7 +23,7 @@ export const InputContainer = styled.div`
   }
 `;
 
-export const Inputs = styled.input`
+export const Inputs = styled.input `
   background: transparent;
   align-items: center;
   flex: 1;
@@ -36,3 +36,4 @@ export const ErrorDiv = styled.div`
   margin-top: 10px;
   color: var(--orange)
 `;
+
