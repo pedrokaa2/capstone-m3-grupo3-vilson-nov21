@@ -5,6 +5,9 @@ import { AnimationContainer, Background, Container, Content } from "./style";
 import { useForm } from "react-hook-form";
 import * as yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
+import api from "../../service/api";
+import { toast } from "react-toastify";
+import { useHistory } from "react-router-dom";
 
 const Signup = () => {
   const signupSchema = yup.object().shape({
@@ -20,7 +23,7 @@ const Signup = () => {
       .matches(/\W/, "Deve conter um caractere especial")
       .matches(/^(?!.*\s).{0,}$/, "Não pode conter espaços")
       .required("Campo obrigatório!"),
-    passworConfirm: yup
+    passwordConfirm: yup
       .string()
       .oneOf([yup.ref("password")], "Senhas diferentes")
       .required("Campo obrigatório!"),
@@ -32,8 +35,19 @@ const Signup = () => {
     formState: { errors },
   } = useForm({ resolver: yupResolver(signupSchema) });
 
-  const onSubmitFunction = (data) => {
-    console.log(data);
+  const history = useHistory();
+
+  const onSubmitFunction = ({ name, cnpj, email, password }) => {
+    const user = { name, cnpj, email, password };
+    api
+      .post("/register", user)
+      .then((_) => {
+        toast.success("Conta criada com sucesso! ");
+        return history.push("/login");
+      })
+      .catch((err) =>
+        toast.error("Erro ao criar a conta, verifique os campos!")
+      );
   };
 
   return (
@@ -46,20 +60,39 @@ const Signup = () => {
             <p>
               Já tem uma conta? Faça seu <Link to="/login">login</Link>
             </p>
-            <Input register={register("name")} placeholder="NOME DA EMPRESA" />
-            <Input register={register("cnpj")} placeholder="CNPJ" />
-            <Input register={register("email")} placeholder="EMAIL" />
             <Input
-              register={register("password")}
+              register={register}
+              name="name"
+              placeholder="NOME DA EMPRESA"
+              error={errors.name?.message}
+            />
+            <Input
+              register={register}
+              name="cnpj"
+              placeholder="CNPJ"
+              error={errors.cnpj?.message}
+            />
+            <Input
+              register={register}
+              name="email"
+              placeholder="EMAIL"
+              error={errors.email?.message}
+            />
+            <Input
+              register={register}
+              name="password"
               type="password"
               placeholder="SENHA"
+              error={errors.password?.message}
             />
             <Input
-              register={register("passworConfirm")}
+              register={register}
+              name="passwordConfirm"
               type="password"
               placeholder="CONFIRMAR SENHA"
+              error={errors.passwordConfirm?.message}
             />
-            <Button height="30px" type="submit">
+            <Button height="50px" width="350px" type="submit">
               CADASTRAR
             </Button>
           </form>

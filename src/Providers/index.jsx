@@ -4,7 +4,7 @@ import { AuthenticatedProvider } from "./authenticated";
 const Providers = ({ children }) => {
   return (
     <AuthenticatedProvider>
-      <EventProvider>{children}</EventProvider>;
+      <EventProvider>{children}</EventProvider>
     </AuthenticatedProvider>
   );
 };

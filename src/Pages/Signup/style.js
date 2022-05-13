@@ -52,6 +52,10 @@ export const AnimationContainer = styled.div`
       margin-bottom: 32px;
     }
 
+    > div {
+      margin-top: 16px;
+    }
+
     p {
       margin-top: 8px;
       color: var(--darkblue);
@@ -63,4 +67,12 @@ export const AnimationContainer = styled.div`
       color: var(--lightblue);
     }
   }
+`;
+
+export const FormContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
 `;
