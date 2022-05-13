@@ -6,6 +6,9 @@ import Login from "../Pages/Login";
 const Routes = () => {
   return (
     <Switch>
+      <Route exact path="/signup">
+        <Signup />
+      </Route>
       {/* <Route exact path="/">
         <Home />
       </Route> */}
@@ -15,9 +18,6 @@ const Routes = () => {
       <Route exact path="/newEvent">
         <Events />
       </Route>
-      {/* <Route exact path="/signup">
-                <Signup/>
-            </Route> */}
     </Switch>
   );
 };

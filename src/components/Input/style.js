@@ -6,14 +6,15 @@ export const InputContainer = styled.div`
   border: 2px solid var(--darkblue);
   padding: 1rem;
   height: 52px;
-  width: 90%;
+  width: 80%;
   transition: 0.4s;
+  /* margin-left: 50px; */
   margin-bottom: 25px;
   
 
   @media (min-width: 1024px) {
     width: 338px;
-    margin-bottom: 40px;
+    margin-bottom: 20px;
   }
 `;
 
