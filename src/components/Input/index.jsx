@@ -1,9 +1,10 @@
-import { InputContainer, Inputs } from "./style";
+import { InputContainer, Inputs, ErrorDiv } from "./style";
 
-function Input({ placeholder, register, ...rest }) {
+function Input({ placeholder, register, error, name, ...rest }) {
   return (
-    <InputContainer>
-      <Inputs {...rest} {...register} placeholder={placeholder} />
+    <InputContainer isErrored={!!error}>
+      <Inputs {...rest} {...register(name)} placeholder={placeholder} />
+      <ErrorDiv>{!!error && <span>{error}</span>}</ErrorDiv>
     </InputContainer>
   );
 }
