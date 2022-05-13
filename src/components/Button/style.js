@@ -12,6 +12,6 @@ export const Container = styled.button`
 
   @media (min-width: 1024px) {
     height: ${(props) => (props.height ? props.height : "60px")};
-    width: ${(props) => (props.width ? props.width : "400px")};
+    width: ${(props) => (props.width ? props.width : "300px")};
   }
 `;
