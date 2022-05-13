@@ -1,23 +1,22 @@
 import styled from "styled-components";
 
-export const InputContainer = styled.div`
+export const InputContainer = styled.div `
   background: var(--white);
   border-radius: 10px;
   border: 2px solid var(--darkblue);
   padding: 1rem;
   height: 52px;
-  width: 90%;
+  width: 80%;
   transition: 0.4s;
   margin-bottom: 25px;
-  
 
-  @media (min-width: 1024px) {
+  @media (min-width: 900px) {
     width: 338px;
-    margin-bottom: 40px;
+    margin-bottom: 20px;
   }
 `;
 
-export const Inputs = styled.input`
+export const Inputs = styled.input `
   background: transparent;
   align-items: center;
   flex: 1;

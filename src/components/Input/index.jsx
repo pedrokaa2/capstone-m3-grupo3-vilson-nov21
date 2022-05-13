@@ -1,9 +1,9 @@
 import { InputContainer, Inputs } from "./style";
 
-function Input({ placeholder, ...rest }) {
+function Input({ placeholder, register, value, ...rest }) {
   return (
-    <InputContainer {...rest} >
-      <Inputs  placeholder={placeholder} />
+    <InputContainer>
+      <Inputs {...rest} {...register(value)} placeholder={placeholder} />
     </InputContainer>
   );
 }

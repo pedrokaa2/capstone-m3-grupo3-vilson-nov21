@@ -1,8 +1,10 @@
 import { Container } from "./style";
 
-const Button = ({ children, width, height, ...rest }) => {
+const Button = ({ children, width, height, type, ...rest }) => {
   return (
-  <Container {...rest} width={width} height={height}>{children}</Container>
+    <Container {...rest} type={type} width={width} height={height}>
+      {children}
+    </Container>
   );
 };
 

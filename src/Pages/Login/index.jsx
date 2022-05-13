@@ -1,12 +1,20 @@
 import * as yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
-import api from "../../service/api";
-import { toast } from "react-toastify";
 import { Redirect } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import { useHistory } from "react-router-dom";
 import { Link } from "react-router-dom";
 import { useAuthenticated } from "../../Providers/authenticated";
+import "./styled";
+import Button from "../../components/Button";
+import "./styled.js";
+import {
+  Container,
+  Background,
+  Content,
+  AnimationContainer,
+  Inputs,
+} from "./styled";
 
 const Login = () => {
   const { authenticated, login } = useAuthenticated();
@@ -43,27 +51,34 @@ const Login = () => {
   }
 
   return (
-    <div>
-      <h1>LOGIN</h1>
+    <Container>
+      <Content>
+        <AnimationContainer>
+          <div>
+            <form onSubmit={handleSubmit(handleLogin)}>
+              <h1>LOGIN</h1>
 
-      <span>
-        Não tem uma conta? Faça seu <Link to="/signup">cadastro</Link>
-      </span>
+              <p>
+                Não tem uma conta? Faça seu <Link to="/signup">cadastro</Link>
+              </p>
+              <Inputs type="text" placeholder="EMAIL" {...register("email")} />
 
-      <form onSubmit={handleSubmit(handleLogin)}>
-        <input type="text" placeholder="EMAIL" {...register("email")} />
-
-        <span>{errors.email?.message}</span>
-
-        <input type="password" placeholder="SENHA" {...register("password")} />
-
-        <span>{errors.password?.message}</span>
-
-        <div>
-          <button type="submit">ENTRAR</button>
-        </div>
-      </form>
-    </div>
+              <span>{errors.email?.message}</span>
+              <Inputs
+                type="password"
+                placeholder="SENHA"
+                {...register("password")}
+              />
+              <span>{errors.password?.message}</span>
+              <div>
+                <Button type="submit">ENTRAR</Button>
+              </div>
+            </form>
+          </div>
+        </AnimationContainer>
+      </Content>
+      <Background />
+    </Container>
   );
 };
 
