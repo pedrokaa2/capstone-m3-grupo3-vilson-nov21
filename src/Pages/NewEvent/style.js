@@ -45,7 +45,13 @@ export const Cover = styled.div`
 `;
 
 export const Form = styled.form`
-  margin-top: 32px;
+  > button {
+    display: block;
+    margin: 20px auto 0 auto;
+  }
+`;
+
+export const FormContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -57,10 +63,46 @@ export const Form = styled.form`
 `;
 
 export const DivForm = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   &:nth-child(odd) {
     margin-right: 10px;
   }
 `;
+
+export const Select = styled.select`
+  background: var(--white);
+  border-radius: 10px;
+  border: ${(props) =>
+    props.errorMsg ? "2px solid var(--orange)" : "2px solid var(--darkblue)"};
+  padding: 0.5rem 1rem;
+  height: 52px;
+  width: 80%;
+  transition: 0.4s;
+  margin-top: 25px;
+
+  font-family: "Nunito", sans-serif;
+  font-size: 1rem;
+
+  @media (min-width: 1024px) {
+    width: 338px;
+    margin-top: 20px;
+  }
+`;
+
+export const ErrorSpan = styled.span`
+  color: var(--orange);
+  background-color: var(--white);
+  padding: 0 5px;
+  z-index: 50;
+  position: relative;
+  top: -10px;
+  margin-bottom: -20px;
+  @media (min-width: 1024px) {
+  }
+`;
+
 // --orange: #FF5203;
 // --blue: #27B5DD;
 // --lightblue: #9ED9EA;
