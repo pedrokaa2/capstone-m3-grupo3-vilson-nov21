@@ -18,11 +18,10 @@ const Signup = () => {
       .matches(/[A-Z]/, "Deve conter uma letra maiúscula")
       .matches(/[0-9]/, "Deve conter um número")
       .matches(/\W/, "Deve conter um caractere especial")
-      .matches(/^(?!.*\s).{0,}$/, "Não pode conter espaços")
       .required("Campo obrigatório!"),
     passworConfirm: yup
       .string()
-      .oneOf([yup.ref("password")], "Senhas diferentes")
+      .oneOf([yup.ref("password")], "Senhas aaaa")
       .required("Campo obrigatório!"),
   });
 

@@ -2,6 +2,7 @@ import { Switch, Route } from "react-router-dom";
 import Events from "../Pages/NewEvent";
 import Home from "../Pages/Home";
 import Login from "../Pages/Login";
+import Signup from "../Pages/Signup"
 
 const Routes = () => {
   return (
