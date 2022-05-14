@@ -4,6 +4,7 @@ import { Redirect, useHistory } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import { useContext } from "react";
 import { EventContext } from "../../Providers/event";
+import { Link } from "react-router-dom";
 
 import {
   Header,
@@ -52,7 +53,9 @@ const NewEvent = () => {
   return (
     <>
       <Header>
-        <Logo src={LogoImg} alt="logo borala" />
+        <Link to="/">
+          <Logo src={LogoImg} alt="logo borala" />
+        </Link>
         <SpanNovoEvento>NOVO EVENTO</SpanNovoEvento>
       </Header>
       <Cover></Cover>

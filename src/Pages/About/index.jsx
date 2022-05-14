@@ -2,6 +2,7 @@ import Logo from "../../Img/boralalogo.png";
 import Equipe from "../../Img/pageabout.png";
 import * as S from "./style";
 import { FaLinkedin, FaGithub } from "react-icons/fa";
+import { Link } from "react-router-dom";
 
 const About = () => {
   return (
@@ -10,7 +11,10 @@ const About = () => {
         <div>
           <S.Header>
             <figure>
-              <img src={Logo} alt="Logo"></img>
+              <Link to ="/">
+                <img src={Logo} alt="Logo">
+                </img>
+              </Link>
             </figure>
             <h2>SOBRE</h2>
           </S.Header>
