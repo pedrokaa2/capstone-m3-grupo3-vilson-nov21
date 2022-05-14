@@ -76,3 +76,21 @@ export const FormContainer = styled.div`
   justify-content: center;
   margin: 0 auto;
 `;
+
+export const ErrorSpan = styled.span`
+  color: var(--orange);
+  background-color: var(--white);
+  padding: 0 5px;
+  z-index: 50;
+  position: relative;
+  top: -10px;
+  margin-bottom: -20px;
+  @media (min-width: 1024px) {
+  }
+`;
+
+export const DivInputs = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+`;

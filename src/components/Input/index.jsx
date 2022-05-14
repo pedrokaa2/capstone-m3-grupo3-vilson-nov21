@@ -1,12 +1,9 @@
-import { InputContainer, Inputs, ErrorDiv } from "./style";
-
-function Input({ placeholder, register, error, name, ...rest }) {
+import { InputContainer, Inputs } from "./style";
+function Input({ placeholder, register, errorMsg, ...rest }) {
   return (
-    <InputContainer isWrong={!!error}>
-      <Inputs {...rest} {...register(name)} placeholder={placeholder} />
-      <ErrorDiv>{!!error && <span>{error}</span>}</ErrorDiv>
+    <InputContainer errorMsg={errorMsg}>
+      <Inputs {...rest} {...register} placeholder={placeholder} />
     </InputContainer>
   );
 }
-
 export default Input;
