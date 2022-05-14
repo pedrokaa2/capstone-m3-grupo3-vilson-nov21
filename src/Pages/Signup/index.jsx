@@ -7,7 +7,7 @@ import {
   Container,
   Content,
   ErrorSpan,
-  DivInputs,
+  DivInputs
 } from "./style";
 import { useForm } from "react-hook-form";
 import * as yup from "yup";
@@ -15,6 +15,7 @@ import { yupResolver } from "@hookform/resolvers/yup";
 import api from "../../service/api";
 import { toast } from "react-toastify";
 import { useHistory } from "react-router-dom";
+import BoraLaLogo from "../../assets/boralalogo.png";
 
 const Signup = () => {
   const signupSchema = yup.object().shape({
@@ -65,7 +66,8 @@ const Signup = () => {
           <form onSubmit={handleSubmit(onSubmitFunction)}>
             <h1>CADASTRO</h1>
             <p>
-              Já tem uma conta? Faça seu <Link to="/login">login</Link>
+              Já tem uma conta <img src={BoraLaLogo} alt="borala"></img> ? Faça
+              seu <Link to="/login">login</Link>
             </p>
             <DivInputs>
               <Input
@@ -110,9 +112,9 @@ const Signup = () => {
                 <ErrorSpan>{errors.passwordConfirm.message}</ErrorSpan>
               )}
             </DivInputs>
-            <Button height="50px" width="350px" type="submit">
-              CADASTRAR
-            </Button>
+            <div>
+              <Button type="submit">ENTRAR</Button>
+            </div>
           </form>
         </AnimationContainer>
       </Content>

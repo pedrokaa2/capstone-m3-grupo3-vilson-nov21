@@ -5,15 +5,16 @@ export const Container = styled.button`
   color: var(--white);
   border-radius: 15px;
   border: none;
-  width: 250px;
-  height: 50px;
+  min-width: 272px;
+  max-width: 352px;
+  height: 60px;
   font-family: "Nunito", sans-serif;
   font-weight: bold;
   margin-top: 20px;
 
-  @media (min-width: 1024px) {
+  @media (min-width: 768px) {
     height: ${(props) => (props.height ? props.height : "60px")};
 
-    width: ${(props) => (props.width ? props.width : "300px")};
+    width: ${(props) => (props.width ? props.width : "352px")};
   }
 `;

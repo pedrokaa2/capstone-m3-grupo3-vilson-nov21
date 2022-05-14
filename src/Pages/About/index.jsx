@@ -1,5 +1,5 @@
-import Logo from "../../Img/boralalogo.png";
-import Equipe from "../../Img/pageabout.png";
+import Logo from "../../img/boralalogo.png";
+import Equipe from "../../img/pageabout.png";
 import * as S from "./style";
 import { FaLinkedin, FaGithub } from "react-icons/fa";
 import { Link } from "react-router-dom";
