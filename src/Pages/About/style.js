@@ -1,128 +1,94 @@
 import styled from "styled-components";
 
-export const ContainerAll = styled.div`
+export const Container = styled.div `
   display: flex;
-  flex-wrap: 
+  flex-direction: column;
   justify-content: center;
-  text-align: center;
-  padding-top: 20px;
-`;
-
-export const ContainerPeople = styled.div`
-  display: flex;
-  justify-content:
   align-items: center;
-  flex-wrap: wrap;
-  max-width: 100%;
-`;
 
-export const ContainerMain = styled.main`
-width: 100%;
-`;
+  img {
+    width: 100%;
+  }
+`
 
-export const ContainerBox = styled.div`
-width: 100%;
-background: var(--white);
-height: 200px;
-border-radius: 10px;
-padding: 10px 20px;
-margin-left: 10px;
-margin-right: 10px;
-margin-bottom: 100px;
-display: flex;
-justify-content: center;
-align-items: center;
-img {
-  height: 160px;
-  border-radius: 75px;
-}
-> strong {
-  font-size: 20px;
-}
-> div {
-  height: 70%;
+export const Header = styled.div `
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 100px;
+
+  img {
+    width: 150px;
+    margin-left: 30px;
+  }
+
+  h2 {
+    color: var(--blue);
+    margin-right: 30px;
+  }
+`
+
+export const divImg = styled.div `
+  margin-bottom: 30px;
+`
+
+export const cardOne = styled.div `
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  margin-left: 15%;
+
+  img {
+    border-radius: 100%;
+    width: 60%
+  }
+`
+
+export const cardOneFirstSon = styled.div `
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
-  margin-top: 10px;
-  width: 70%;
-  
-}
+  margin-bottom: 20px;
 
-@media only screen and (max-width: 425px) {
-  flex-direction: column;
-  width: 285px;
-  height: 335px;
-  padding-top: 20px;
-  padding-bottom: 0px;
-  > div {
-    justify-content: space-evenly;
-  }
-}
-`;
-export const ContainerBoxColorSpan = styled.span`
-color:#27B5DD
-`;
-
-export const ContainerBoxH2 = styled.h2`
-color:#27B5DD;
-position: absolute;
-width: 176px;
-height: 49px;
-left: 1350px;
-top: 35px;
-`;
-
-
-export const ContainerBoxH1 = styled.h1`
-padding: 0px 41px;
-`;
-
-export const ContainerBoxColorP = styled.p`
-color: #FF5203
-
-`;
-
-
-export const ContainerBoxSecond = styled.div`
-  width: 100%;
-  background: var(--white);
-  height: 200px;
-  border-radius: 10px;
-  padding: 10px 20px;
-  margin-left: 10px;
-  margin-right: 10px;
-  margin-bottom: 16px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
   img {
-    height: 160px;
-    border-radius: 75px;
+    width: 60%;
+    height: 40%;
   }
-  > strong {
-    font-size: 20px;
+`
+
+export const cardOneSecondSon = styled.div `
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-left: 15px;
+`
+
+export const cardDescription = styled.div `
+  h3 {
+    color: var(--darkblue);
+    font-size: 12px;
+    width: 135px;
   }
-  > div {
-    height: 70%;
+  div {
     display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    margin-top: 40px;
-    width: 70%;
+    align-items: center;
+    margin: 5px 0;
   }
-  @media only screen and (max-width: 425px) {
-    flex-direction: column;
-    width: 285px;
-    height: 335px;
-    padding-top: 20px;
-    padding-bottom: 0px;
-    > strong {
-      margin-top: 10px;
-    }
-    > div {
-      justify-content: space-evenly;
-    }
+  h4 {
+    color: var(--orange);
+    margin-right: 3px;
+    font-size: 12px;
   }
+  h5 {
+    color: var(--blue);
+    font-size: 12px;
+  }
+`
+
+export const cardOneThirdSon = styled.div `
+  display: flex;
   
-`;
+  a {
+    margin-right: 3px;
+  }
+`
