@@ -8,10 +8,13 @@ export const Container = styled.div`
 `;
 
 export const Background = styled.div`
-  @media (min-width: 900px) {
+  @media (min-width: 768px) {
     flex: 1;
-    background: url(${SignupImage}) no-repeat center, var(--lightblue);
+    background: url(${SignupImage}) no-repeat center var(--lightblue);
     background-size: contain;
+  }
+  @media (min-width: 1300px) {
+    background-size: auto auto;
   }
 `;
 
@@ -21,7 +24,11 @@ export const Content = styled.div`
   align-items: center;
   justify-content: center;
   width: 100%;
-  max-width: 500px;
+  max-width: 768px;
+
+  @media (min-width: 768px) {
+    max-width: 500px;
+  }
 `;
 
 const appearFromRight = keyframes`
@@ -64,7 +71,10 @@ export const AnimationContainer = styled.div`
 
     a {
       font-weight: bold;
-      color: var(--lightblue);
+      color: var(--blue);
+    }
+    img {
+      width: 17%;
     }
   }
 `;
@@ -85,8 +95,6 @@ export const ErrorSpan = styled.span`
   position: relative;
   top: -10px;
   margin-bottom: -20px;
-  @media (min-width: 1024px) {
-  }
 `;
 
 export const DivInputs = styled.div`
