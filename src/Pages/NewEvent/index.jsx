@@ -2,7 +2,6 @@ import * as yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { Redirect, useHistory } from "react-router-dom";
 import { useForm } from "react-hook-form";
-import { useAuthenticated } from "../../Providers/authenticated";
 import { useContext } from "react";
 import { EventContext } from "../../Providers/event";
 
@@ -22,7 +21,6 @@ import Input from "../../components/Input";
 import Button from "../../components/Button";
 
 const NewEvent = () => {
-  const { authenticated } = useAuthenticated();
   const { eventRegister } = useContext(EventContext);
 
   const history = useHistory();

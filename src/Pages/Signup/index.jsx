@@ -1,7 +1,14 @@
 import { Link } from "react-router-dom";
 import Input from "../../components/Input";
 import Button from "../../components/Button";
-import { AnimationContainer, Background, Container, Content } from "./style";
+import {
+  AnimationContainer,
+  Background,
+  Container,
+  Content,
+  ErrorSpan,
+  DivInputs,
+} from "./style";
 import { useForm } from "react-hook-form";
 import * as yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
@@ -60,38 +67,49 @@ const Signup = () => {
             <p>
               Já tem uma conta? Faça seu <Link to="/login">login</Link>
             </p>
-            <Input
-              register={register}
-              name="name"
-              placeholder="NOME DA EMPRESA"
-              error={errors.name?.message}
-            />
-            <Input
-              register={register}
-              name="cnpj"
-              placeholder="CNPJ"
-              error={errors.cnpj?.message}
-            />
-            <Input
-              register={register}
-              name="email"
-              placeholder="EMAIL"
-              error={errors.email?.message}
-            />
-            <Input
-              register={register}
-              name="password"
-              type="password"
-              placeholder="SENHA"
-              error={errors.password?.message}
-            />
-            <Input
-              register={register}
-              name="passwordConfirm"
-              type="password"
-              placeholder="CONFIRMAR SENHA"
-              error={errors.passwordConfirm?.message}
-            />
+            <DivInputs>
+              <Input
+                register={register("name")}
+                name="name"
+                placeholder="NOME DA EMPRESA"
+                errorMsg={errors.name?.message}
+              />
+              {errors.name && <ErrorSpan>{errors.name.message}</ErrorSpan>}
+              <Input
+                register={register("cnpj")}
+                name="cnpj"
+                placeholder="CNPJ"
+                errorMsg={errors.cnpj?.message}
+              />
+              {errors.cnpj && <ErrorSpan>{errors.cnpj.message}</ErrorSpan>}
+              <Input
+                register={register("email")}
+                name="email"
+                placeholder="EMAIL"
+                errorMsg={errors.email?.message}
+              />
+              {errors.email && <ErrorSpan>{errors.email.message}</ErrorSpan>}
+              <Input
+                register={register("password")}
+                name="password"
+                type="password"
+                placeholder="SENHA"
+                errorMsg={errors.password?.message}
+              />
+              {errors.password && (
+                <ErrorSpan>{errors.password.message}</ErrorSpan>
+              )}
+              <Input
+                register={register("passwordConfirm")}
+                name="passwordConfirm"
+                type="password"
+                placeholder="CONFIRMAR SENHA"
+                errorMsg={errors.passwordConfirm?.message}
+              />
+              {errors.passwordConfirm && (
+                <ErrorSpan>{errors.passwordConfirm.message}</ErrorSpan>
+              )}
+            </DivInputs>
             <Button height="50px" width="350px" type="submit">
               CADASTRAR
             </Button>
