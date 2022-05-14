@@ -31,6 +31,7 @@ export const Header = styled.div `
 
 export const divImg = styled.div `
   margin-bottom: 30px;
+  max-height: 40vh;
 `
 
 export const cardOne = styled.div `
@@ -43,16 +44,40 @@ export const cardOne = styled.div `
     border-radius: 100%;
     width: 60%
   }
+
+  @media (min-width: 768px) {
+    flex-direction: row;
+    width: 60%;
+    align-items: center;
+    justify-content: center;
+  }
 `
 
 export const cardOneFirstSon = styled.div `
   display: flex;
   flex-direction: row;
   margin-bottom: 20px;
+  margin: 9% 9%;
 
   img {
-    width: 60%;
+    width: 70%;
     height: 40%;
+  }
+
+  @media (min-width: 768px) {
+    img {
+      width: 70%;
+    }
+  }
+  @media (min-width: 1200px) {
+    img {
+      width: 85%;
+    }
+  }
+  @media (min-width: 1500px) {
+    img {
+      width: 100%;
+    }
   }
 `
 
@@ -82,6 +107,13 @@ export const cardDescription = styled.div `
   h5 {
     color: var(--blue);
     font-size: 12px;
+  }
+
+  @media (min-width: 1200px) {
+    h3 {
+      font-size: 18px;
+      width: 200px;
+    }
   }
 `
 
