@@ -48,27 +48,36 @@ export const AnimationContainer = styled.div `
   justify-content: center;
   animation: ${appearFromRight} 1s;
 
+  .Home {
+    font-size: 16px;
+  }
+
   form {
     margin: 80px 0;
     min-width: 340px;
     max-width: 440px;
     text-align: center;
+
     h1 {
       margin-bottom: 32px;
     }
+
     p {
       margin-top: 8px;
       color: var(--darkblue);
       font-weight: bold;
       padding: 25px;
     }
+
     a {
       font-weight: bold;
       color: var(--blue);
     }
+
     img {
       width: 17%;
     }
+    
   }
 `;
 
