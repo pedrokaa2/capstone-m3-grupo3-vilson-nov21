@@ -1,10 +1,14 @@
 import * as S from "./style.js";
 import Menu from "../../img/menu3barras.png";
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
+import { FaSearch } from "react-icons/fa";
+import { useAuthenticated } from "../../Providers/authenticated/index.jsx";
 
-export const MenuMobile = ({setCurrentState}) => {
+export const MenuMobile = ({ setCurrentState }) => {
   const [isOpen, setIsOpen] = useState(false);
+  const { authenticated, setAuthenticated } = useAuthenticated;
+  const history = useHistory();
 
   return (
     <S.DisplayMenuMob>
@@ -16,8 +20,10 @@ export const MenuMobile = ({setCurrentState}) => {
       <S.HandleMenu isOpen={isOpen}>
         <Link to="/newEvent">NOVO EVENTO</Link>
         <Link to="/about">SOBRE</Link>
-        <select defaultValue="" onChange={(event) => setCurrentState(event.target.value)}>
-        <option value="">ESTADO</option>
+        <select
+          onChange={(event) => setCurrentState(event.target.value)}
+        >
+          <option value="Selecione seu Estado">ESTADO</option>
           <option value="Acre">Acre</option>
           <option value="Alagoas">Alagoas</option>
           <option value="Amapá">Amapá</option>
@@ -45,7 +51,26 @@ export const MenuMobile = ({setCurrentState}) => {
           <option value="São Paulo">São Paulo</option>
           <option value="Sergipe">Sergipe</option>
           <option value="Tocantins">Tocantins</option>
-        </select>        
+        </select>
+        <S.DivInput>
+          <FaSearch color="var(--white)" />
+          <input type="text" placeholder="EVENTO, CIDADE, CATEGORIA..." />
+        </S.DivInput>
+        <S.DivButton>
+          {!authenticated ? (
+            <button
+              onClick={() => {
+                history.push("/login");
+                localStorage.removeItem("@borala:token");
+                setAuthenticated(false);
+              }}
+            >
+              SAIR
+            </button>
+          ) : (
+            <button>ENTRAR</button>
+          )}
+        </S.DivButton>
       </S.HandleMenu>
     </S.DisplayMenuMob>
   );
