@@ -59,7 +59,13 @@ export const MenuDesktop = ({setCurrentState}) => {
               SAIR
             </button>
           ) : (
-            <button>ENTRAR</button>
+            <button
+              onClick={() => {
+                history.push("/login");
+              }}
+            >
+              ENTRAR
+            </button>
           )}
         </S.DivButton>
     </S.DisplayMenuDesk>
