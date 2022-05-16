@@ -13,13 +13,14 @@ export const DisplayMenuDesk = styled.div `
       font-size: 14px;
       display: flex;
       justify-content: center;
+      width: 120px;
     }
   }
 `
 
 export const DivSelect = styled.div `
   display: flex;
-  width: 10%;
+  width: 14%;
   justify-content: center;
   border: 1px solid var(--white);
   border-radius: 20px;
@@ -30,7 +31,7 @@ export const DivSelect = styled.div `
     border: none;
     padding: 10px 3px;
     font-size: 13px;
-    width: 95%;
+    width: 100%;
   }
 
 `
