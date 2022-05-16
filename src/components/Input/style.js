@@ -9,7 +9,7 @@ export const InputContainer = styled.div`
   width: 80%;
   transition: 0.4s;
   margin-top: 25px;
-  @media (min-width: 1024px) {
+  @media (min-width: 768px) {
     width: 338px;
     margin-top: 20px;
   }
