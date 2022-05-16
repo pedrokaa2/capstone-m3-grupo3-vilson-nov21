@@ -1,23 +1,21 @@
 import * as S from "./style";
-import { useState } from "react";
 import Logo from "../../img/boralalogo.png";
-import Menu from "../../img/menu3barras.png";
 import LogoNav from "../../assets/boralanav.png";
 import LocationLogo from "../../assets/locationVector.svg";
 import ImgCard1 from "../../assets/DJHenriqueDeFerrazTeste.svg"
+import { MenuDesktop } from "../../components/MenuDesktop";
+import { MenuMobile } from "../../components/MenuMobile";
 
 const Home = () => {
-  const menu = useState(false);
-
+  
   return (
     <div>
       <S.Header>
         <figure>
           <img src={Logo} alt="Logo"></img>
         </figure>
-        <figure>
-          <img className="Menu" src={Menu} alt="Menu"></img>
-        </figure>
+        <MenuDesktop/>
+        <MenuMobile/>
       </S.Header>
       <S.NavImgDiv>
         <div>
@@ -38,7 +36,26 @@ const Home = () => {
             <h5>21 MAI</h5>
           </div>
         </S.cardDescription>
+        <img src={ImgCard1} alt="Dj Henrique de Ferraz"></img>
+        <S.cardDescription>
+          <h3>Revoada da Oficina - DJ Henrique de Ferraz</h3>
+          <div>
+            <h4>São Paulo - SP</h4>
+            <h5>21 MAI</h5>
+          </div>
+        </S.cardDescription>
+        <img src={ImgCard1} alt="Dj Henrique de Ferraz"></img>
+        <S.cardDescription>
+          <h3>Revoada da Oficina - DJ Henrique de Ferraz</h3>
+          <div>
+            <h4>São Paulo - SP</h4>
+            <h5>21 MAI</h5>
+          </div>
+        </S.cardDescription>
       </S.CardBox>
+      <S.copyrightSpan>
+        Copyright &#169; 2022 boralá
+      </S.copyrightSpan>
     </div>
   );
 };
