@@ -20,45 +20,49 @@ const Home = () => {
         <MenuDesktop setCurrentState={setCurrentState} />
         <MenuMobile setCurrentState={setCurrentState} />
       </S.Header>
-      <S.NavImgDiv>
-        <div>
-          O MELHOR HAPPY HOUR DO BRASIL, AQUI NO
-          <img src={LogoNav} alt="logoNav"></img>
-        </div>
-      </S.NavImgDiv>
-      <S.LocationDiv>
-        <img src={LocationLogo} alt="location"></img>
-        <h2>{currentState}</h2>
-      </S.LocationDiv>
-      <S.CardBox>
-        <img src={ImgCard1} alt="Dj Henrique de Ferraz"></img>
-        <S.cardDescription>
-          <h3>Revoada da Oficina - DJ Henrique de Ferraz</h3>
-          <div>
-            <h4>São Paulo - SP</h4>
-            <h5>21 MAI</h5>
-          </div>
-        </S.cardDescription>
-        <img src={ImgCard1} alt="Dj Henrique de Ferraz"></img>
-        <S.cardDescription>
-          <h3>Revoada da Oficina - DJ Henrique de Ferraz</h3>
-          <div>
-            <h4>São Paulo - SP</h4>
-            <h5>21 MAI</h5>
-          </div>
-        </S.cardDescription>
-        <img src={ImgCard1} alt="Dj Henrique de Ferraz"></img>
-        <S.cardDescription>
-          <h3>Revoada da Oficina - DJ Henrique de Ferraz</h3>
-          <div>
-            <h4>São Paulo - SP</h4>
-            <h5>21 MAI</h5>
-          </div>
-        </S.cardDescription>
-      </S.CardBox>
-      <S.copyrightSpan>
-        Copyright &#169; 2022 boralá
-      </S.copyrightSpan>
+      <S.DivMain>
+        <main>
+          <S.NavImgDiv>
+            <div>
+              O MELHOR HAPPY HOUR DO BRASIL, AQUI NO
+              <img src={LogoNav} alt="logoNav"></img>
+            </div>
+          </S.NavImgDiv>
+          <S.LocationDiv>
+            <img src={LocationLogo} alt="location"></img>
+            <h2>{currentState}</h2>
+          </S.LocationDiv>
+          <S.CardBox>
+            <img src={ImgCard1} alt="Dj Henrique de Ferraz"></img>
+            <S.cardDescription>
+              <h3>Revoada da Oficina - DJ Henrique de Ferraz</h3>
+              <div>
+                <h4>São Paulo - SP</h4>
+                <h5>21 MAI</h5>
+              </div>
+            </S.cardDescription>
+            <img src={ImgCard1} alt="Dj Henrique de Ferraz"></img>
+            <S.cardDescription>
+              <h3>Revoada da Oficina - DJ Henrique de Ferraz</h3>
+              <div>
+                <h4>São Paulo - SP</h4>
+                <h5>21 MAI</h5>
+              </div>
+            </S.cardDescription>
+            <img src={ImgCard1} alt="Dj Henrique de Ferraz"></img>
+            <S.cardDescription>
+              <h3>Revoada da Oficina - DJ Henrique de Ferraz</h3>
+              <div>
+                <h4>São Paulo - SP</h4>
+                <h5>21 MAI</h5>
+              </div>
+            </S.cardDescription>
+          </S.CardBox>
+        </main>
+        <S.copyrightSpan>
+          Copyright &#169; 2022 boralá
+        </S.copyrightSpan>
+      </S.DivMain>
     </div>
   );
 };

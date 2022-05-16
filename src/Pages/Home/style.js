@@ -9,17 +9,24 @@ export const Header = styled.div `
   height: 120px;
 
   img {
-    width: 120px;
+    width: 180px;
   }
 
   .Menu {
-    width: 50px;
+    width: 47px;
   }
+`
+
+export const DivMain = styled.div `
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: calc(100vh - 120px);
 `
 
 export const NavImgDiv = styled.div `
   width: 100%;
-  min-height: 200px;
+  min-height: 250px;
   background-image: url(${navImage});
   background-position: center;
   background-repeat: no-repeat;
@@ -84,6 +91,7 @@ export const LocationDiv = styled.div `
       font-size: 20px;
     }
   }
+
 `
 
 export const CardBox = styled.div `
@@ -101,11 +109,23 @@ export const CardBox = styled.div `
     overflow-y: hidden;
     height: auto;
     flex-direction: column;
+
+    img {
+      width: 200px;
+    }
   }
 
-  img {
-    width: 200px;
+  @media (min-height: 844px){
+    flex-direction: column;
+    height: 350px;
+    align-items: center;
+    margin-left: 0;
+
+    img {
+      width: 200px;
+    }
   }
+
 `
 
 export const cardDescription = styled.div `
@@ -137,13 +157,26 @@ export const cardDescription = styled.div `
       width: 200px;
     }
   }
+
+  @media (min-height: 844px){
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+    h3, div {
+      flex-direction: column;
+      width: 60%;
+    }
+
+    h3, h4, h5 {
+      font-size: 14px;
+    }
+  }
 `
 
 export const copyrightSpan = styled.span `
-  display: flex;
-  justify-content: center;
-  align-items: center;
   color: var(--darkblue);
   font-size: 12px;
-  margin-top: 100px;
+  text-align: center;
+  margin-bottom: 5px;
 `
