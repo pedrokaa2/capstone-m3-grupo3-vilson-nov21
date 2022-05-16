@@ -21,10 +21,12 @@ import LogoImg from "../../assets/boralalogo.png";
 import Input from "../../components/Input";
 import Button from "../../components/Button";
 
-const NewEvent = () => {
-  const { eventRegister } = useContext(EventContext);
+const NewEvent = ({ isEditting }) => {
+  const { eventRegister, eventUpdate } = useContext(EventContext);
 
   const history = useHistory();
+
+  const actualEvent = isEditting && history.location.state[0];
 
   const formSchema = yup.object().shape({
     name: yup.string().required("Nome é obrigatório"),
@@ -40,10 +42,19 @@ const NewEvent = () => {
     formState: { errors },
   } = useForm({
     resolver: yupResolver(formSchema),
+    defaultValues: isEditting && {
+      name: actualEvent.name,
+      date: actualEvent.date,
+      city: actualEvent.city,
+      imgUrl: actualEvent.imgUrl,
+      eventPage: actualEvent.eventPage,
+      state: actualEvent.state,
+    },
   });
 
   const onSubmitFunction = (data) => {
-    eventRegister(data, history);
+    isEditting && (data.id = actualEvent.id);
+    isEditting ? eventUpdate(data, history) : eventRegister(data, history);
   };
 
   if (!localStorage.getItem("@borala:token")) {
@@ -56,9 +67,12 @@ const NewEvent = () => {
         <Link to="/">
           <Logo src={LogoImg} alt="logo borala" />
         </Link>
-        <SpanNovoEvento>NOVO EVENTO</SpanNovoEvento>
+        <SpanNovoEvento>
+          {isEditting ? "EDITAR EVENTO" : "NOVO EVENTO"}
+        </SpanNovoEvento>
       </Header>
-      <Cover></Cover>
+
+      <Cover />
       <Form onSubmit={handleSubmit(onSubmitFunction)}>
         <FormContainer>
           <DivForm>
@@ -138,10 +152,22 @@ const NewEvent = () => {
             {errors.state && <ErrorSpan>{errors.state.message}</ErrorSpan>}
           </DivForm>
         </FormContainer>
-        <Button type="submit">CADASTRAR EVENTO</Button>
+        <Button type="submit">
+          {isEditting ? "SALVAR" : "CADASTRAR EVENTO"}
+        </Button>
       </Form>
     </>
   );
 };
 
 export default NewEvent;
+
+//TESTAR HOME
+// const history = useHistory();
+
+//   api
+//     .get("/events/")
+//     .then((response) => {
+//       history.push("/editEvent", response.data);
+//     })
+//     .catch((r) => console.log(r));
