@@ -76,6 +76,13 @@ export const LocationDiv = styled.div `
 
   h2 {
     margin-left: 3%;
+    text-transform: uppercase
+  }
+
+  @media (max-width: 768px){
+    h2 {
+      font-size: 20px;
+    }
   }
 `
 
@@ -87,6 +94,17 @@ export const CardBox = styled.div `
 
   img {
     width: 150px;
+  }
+
+  @media (min-width: 768px){
+    overflow-x: hidden;
+    overflow-y: hidden;
+    height: auto;
+    flex-direction: column;
+  }
+
+  img {
+    width: 200px;
   }
 `
 

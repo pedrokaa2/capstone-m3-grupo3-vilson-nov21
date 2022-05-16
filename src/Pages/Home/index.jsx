@@ -5,17 +5,20 @@ import LocationLogo from "../../assets/locationVector.svg";
 import ImgCard1 from "../../assets/DJHenriqueDeFerrazTeste.svg"
 import { MenuDesktop } from "../../components/MenuDesktop";
 import { MenuMobile } from "../../components/MenuMobile";
+import { useState } from "react";
 
 const Home = () => {
   
+  const [currentState, setCurrentState] = useState()
+
   return (
     <div>
       <S.Header>
         <figure>
           <img src={Logo} alt="Logo"></img>
         </figure>
-        <MenuDesktop/>
-        <MenuMobile/>
+        <MenuDesktop setCurrentState={setCurrentState} />
+        <MenuMobile setCurrentState={setCurrentState} />
       </S.Header>
       <S.NavImgDiv>
         <div>
@@ -25,7 +28,7 @@ const Home = () => {
       </S.NavImgDiv>
       <S.LocationDiv>
         <img src={LocationLogo} alt="location"></img>
-        <h2>aaa</h2>
+        <h2>{currentState}</h2>
       </S.LocationDiv>
       <S.CardBox>
         <img src={ImgCard1} alt="Dj Henrique de Ferraz"></img>
