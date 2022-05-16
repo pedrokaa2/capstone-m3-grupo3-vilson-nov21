@@ -17,7 +17,7 @@ export const EventProvider = ({ children }) => {
     api
       .post("/events/", data, config)
       .then((response) => {
-        history.push("/home");
+        history.push("/");
         toast.success("Evento cadastrado!");
       })
       .catch((err) => {
@@ -30,8 +30,37 @@ export const EventProvider = ({ children }) => {
       });
   };
 
+  const eventUpdate = (data, history) => {
+    const token = JSON.parse(localStorage.getItem("@borala:token"));
+    data.userId = Number(jwt_decode(token).sub);
+    const config = {
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
+    };
+    api
+      .patch(`/events/${data.id}`, data, config)
+      .then((response) => {
+        history.push("/");
+        toast.success("Evento atualizado!");
+      })
+      .catch((err) => {
+        console.log(err);
+        console.log(data);
+        console.log(config);
+        console.log("TOKEN");
+        console.log(token);
+        toast.error("Algo errado ocorreu!");
+      });
+  };
+
   return (
-    <EventContext.Provider value={{ eventRegister }}>
+    <EventContext.Provider
+      value={{
+        eventRegister,
+        eventUpdate,
+      }}
+    >
       {children}
     </EventContext.Provider>
   );
