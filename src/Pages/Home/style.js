@@ -26,7 +26,7 @@ export const DivMain = styled.div `
 
 export const NavImgDiv = styled.div `
   width: 100%;
-  min-height: 250px;
+  min-height: 120px;
   background-image: url(${navImage});
   background-position: center;
   background-repeat: no-repeat;
@@ -46,6 +46,10 @@ export const NavImgDiv = styled.div `
   img {
     width: 25%;
     margin-left: 2px;
+  }
+
+  @media (min-height: 844px){
+    min-height: 250px;
   }
 
   @media (min-width: 768px) {
@@ -77,17 +81,20 @@ export const NavImgDiv = styled.div `
 export const LocationDiv = styled.div `
   display: flex;
   align-items: center;
-  justify-content: flex-start;
-  margin: 30px;
+  justify-content: center;
+  margin: 30px 30px 0px 30px;
 
 
   h2 {
-    margin-left: 3%;
+    margin-left: 15px;
     text-transform: uppercase;
-    font-size: 15px;
+    font-size: 35px;
   }
 
   @media (max-width: 768px){
+    justify-content: flex-start;
+    margin-bottom: 30px;
+
     h2 {
       font-size: 20px;
     }
@@ -97,7 +104,7 @@ export const LocationDiv = styled.div `
 
 export const CardBox = styled.div `
   display: flex;
-  height: 150px;
+  height: auto;
   overflow-x: scroll;
   margin-left: 30px;
 
@@ -109,24 +116,33 @@ export const CardBox = styled.div `
     overflow-x: hidden;
     overflow-y: hidden;
     height: auto;
-    flex-direction: column;
-
-    img {
-      width: 200px;
-    }
+    flex-wrap: wrap;
+    justify-content: center;
   }
 
   @media (min-height: 844px){
-    flex-direction: column;
-    height: 335px;
     align-items: center;
     margin-left: 0;
 
     img {
-      width: 200px;
+      width: 160px;
     }
   }
 
+`
+
+export const CardBoxDiv = styled.div `
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 15px;
+  margin-left: 2%;
+  flex-direction: column;
+  height: 280px;
+
+  @media (min-width: 768px){
+    flex-direction: row;
+    align-items: center;
+  }
 `
 
 export const cardDescription = styled.div `
@@ -164,15 +180,21 @@ export const cardDescription = styled.div `
     flex-direction: column;
     align-items: center;
     
+    h3 {
+      margin-top: 5px;
+    }
+
     h3, div {
       flex-direction: column;
-      width: 60%;
+      width: 160px;
     }
 
     h3, h4, h5 {
       font-size: 14px;
     }
+
   }
+
 `
 
 export const copyrightSpan = styled.span `

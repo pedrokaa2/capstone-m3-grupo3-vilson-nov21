@@ -15,33 +15,33 @@ export const MenuDesktop = ({setCurrentState}) => {
             onChange={(event) => setCurrentState(event.target.value)}
           >
             <option value="Selecione seu Estado">ESTADO</option>
-            <option value="Acre">Acre</option>
-            <option value="Alagoas">Alagoas</option>
-            <option value="Amapá">Amapá</option>
-            <option value="Amazonas">Amazonas</option>
-            <option value="Bahia">Bahia</option>
-            <option value="Ceará">Ceará</option>
-            <option value="Distrito Federal">Distrito Federal</option>
-            <option value="Espírito Santo">Espírito Santo</option>
-            <option value="Goiás">Goiás</option>
-            <option value="Maranhão">Maranhão</option>
-            <option value="Mato Grosso">Mato Grosso</option>
-            <option value="Mato Grosso do Sul">Mato Grosso do Sul</option>
-            <option value="Minas Gerais">Minas Gerais</option>
-            <option value="Pará">Pará</option>
-            <option value="Paraíba">Paraíba</option>
-            <option value="Paraná">Paraná</option>
-            <option value="Pernambuco">Pernambuco</option>
-            <option value="Piauí">Piauí</option>
-            <option value="Rio de Janeiro">Rio de Janeiro</option>
-            <option value="Rio Grande do Norte">Rio Grande do Norte</option>
-            <option value="Rio Grande do Sul">Rio Grande do Sul</option>
-            <option value="Rondônia">Rondônia</option>
-            <option value="Roraima">Roraima</option>
-            <option value="Santa Catarina">Santa Catarina</option>
-            <option value="São Paulo">São Paulo</option>
-            <option value="Sergipe">Sergipe</option>
-            <option value="Tocantins">Tocantins</option>
+            <option value="Acre">AC</option>
+            <option value="Alagoas">AL</option>
+            <option value="Amapá">AP</option>
+            <option value="Amazonas">AM</option>
+            <option value="Bahia">BA</option>
+            <option value="Ceará">CE</option>
+            <option value="Distrito Federal">DF</option>
+            <option value="Espírito Santo">ES</option>
+            <option value="Goiás">GO</option>
+            <option value="Maranhão">MA</option>
+            <option value="Mato Grosso">MT</option>
+            <option value="Mato Grosso do Sul">MS</option>
+            <option value="Minas Gerais">MG</option>
+            <option value="Pará">PA</option>
+            <option value="Paraíba">PB</option>
+            <option value="Paraná">PR</option>
+            <option value="Pernambuco">PE</option>
+            <option value="Piauí">PI</option>
+            <option value="Rio de Janeiro">RJ</option>
+            <option value="Rio Grande do Norte">RN</option>
+            <option value="Rio Grande do Sul">RS</option>
+            <option value="Rondônia">RO</option>
+            <option value="Roraima">RR</option>
+            <option value="Santa Catarina">SC</option>
+            <option value="São Paulo">SP</option>
+            <option value="Sergipe">SE</option>
+            <option value="Tocantins">TO</option>
           </select>
         </S.DivSelect>
         <S.DivInput>
@@ -59,7 +59,13 @@ export const MenuDesktop = ({setCurrentState}) => {
               SAIR
             </button>
           ) : (
-            <button>ENTRAR</button>
+            <button
+              onClick={() => {
+                history.push("/login");
+              }}
+            >
+              ENTRAR
+            </button>
           )}
         </S.DivButton>
     </S.DisplayMenuDesk>
