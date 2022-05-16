@@ -1,6 +1,5 @@
 import * as yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
-import { Redirect } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import { useHistory } from "react-router-dom";
 import { Link } from "react-router-dom";
@@ -19,7 +18,7 @@ import {
 } from "./style";
 
 const Login = () => {
-  const { authenticated, login } = useAuthenticated();
+  const { login } = useAuthenticated();
 
   const history = useHistory();
 
@@ -47,7 +46,6 @@ const Login = () => {
           <div>
             <form onSubmit={handleSubmit(handleLogin)}>
               <h1>LOGIN</h1>
-
               <p>
                 Não tem uma conta <img src={BoraLaLogo} alt="borala"></img> ? Faça seu <Link to="/signup">cadastro</Link>
               </p>
