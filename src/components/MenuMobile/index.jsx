@@ -67,9 +67,18 @@ export const MenuMobile = ({ setCurrentState }) => {
               SAIR
             </button>
           ) : (
-            <button>ENTRAR</button>
+            <button
+              onClick={() => {
+                history.push("/login");
+              }}
+            >
+              ENTRAR
+            </button>
           )}
         </S.DivButton>
+        <S.copyrightSpan>
+          Copyright &#169; 2022 boralá
+        </S.copyrightSpan>
       </S.HandleMenu>
     </S.DisplayMenuMob>
   );

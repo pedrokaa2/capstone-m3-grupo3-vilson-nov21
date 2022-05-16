@@ -16,10 +16,9 @@ export const HandleMenu = styled.div `
   gap: 40px;
   padding: 18px;
   width: 100%;
-  height: calc(100vh - 120px - 40px);
+  height: calc(100vh - 70px);
   right: 0;
   top: 120px;
-  bottom: 40px;
   position: absolute;
   z-index: 1;
   animation: AppearFromRight 1s;
@@ -91,4 +90,10 @@ export const DivButton = styled.div `
     font-size: 14px;
     border-radius: 20px;
   }
+`
+export const copyrightSpan = styled.span `
+  color: var(--white);
+  font-size: 12px;
+  text-align: center;
+  margin-bottom: 5px;
 `
