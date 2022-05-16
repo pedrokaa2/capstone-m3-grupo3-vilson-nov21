@@ -87,7 +87,13 @@ export const Inputs = styled.input `
   margin-bottom: 25px;
 `;
 
+export const Error = styled.span `
+  color: var(--orange);
+
+  font-size: 15px;
+`;
+
 export const ButtonLogin = styled.div `
   min-width: 340px;
   max-width: 440px;
-`
+`;

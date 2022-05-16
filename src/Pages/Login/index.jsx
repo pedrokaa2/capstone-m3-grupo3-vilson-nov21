@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 import { useAuthenticated } from "../../Providers/authenticated";
 import "./style";
 import Button from "../../components/Button";
-import BoraLaLogo from "../../assets/boralalogo.png"
+import BoraLaLogo from "../../assets/boralalogo.png";
 import "./style.js";
 import {
   Container,
@@ -14,7 +14,8 @@ import {
   Content,
   AnimationContainer,
   Inputs,
-  ButtonLogin
+  Error,
+  ButtonLogin,
 } from "./style";
 
 const Login = () => {
@@ -47,17 +48,20 @@ const Login = () => {
             <form onSubmit={handleSubmit(handleLogin)}>
               <h1>LOGIN</h1>
               <p>
-                Não tem uma conta <img src={BoraLaLogo} alt="borala"></img> ? Faça seu <Link to="/signup">cadastro</Link>
+                Não tem uma conta <img src={BoraLaLogo} alt="borala"></img> ?
+                Faça seu <Link to="/signup">cadastro</Link>
               </p>
               <Inputs type="text" placeholder="EMAIL" {...register("email")} />
 
-              <span>{errors.email?.message}</span>
+              <Error>{errors.email?.message}</Error>
               <Inputs
                 type="password"
                 placeholder="SENHA"
                 {...register("password")}
               />
-              <span>{errors.password?.message}</span>
+
+              <Error>{errors.password?.message}</Error>
+
               <ButtonLogin>
                 <Button type="submit">ENTRAR</Button>
               </ButtonLogin>
