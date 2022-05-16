@@ -26,7 +26,7 @@ export const DivMain = styled.div `
 
 export const NavImgDiv = styled.div `
   width: 100%;
-  min-height: 250px;
+  min-height: 120px;
   background-image: url(${navImage});
   background-position: center;
   background-repeat: no-repeat;
@@ -46,6 +46,10 @@ export const NavImgDiv = styled.div `
   img {
     width: 25%;
     margin-left: 2px;
+  }
+
+  @media (min-height: 844px){
+    min-height: 250px;
   }
 
   @media (min-width: 768px) {
@@ -133,6 +137,7 @@ export const CardBoxDiv = styled.div `
   margin-bottom: 15px;
   margin-left: 2%;
   flex-direction: column;
+  height: 280px;
 
   @media (min-width: 768px){
     flex-direction: row;
