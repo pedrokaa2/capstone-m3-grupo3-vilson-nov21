@@ -83,7 +83,8 @@ export const LocationDiv = styled.div `
 
   h2 {
     margin-left: 3%;
-    text-transform: uppercase
+    text-transform: uppercase;
+    font-size: 15px;
   }
 
   @media (max-width: 768px){
@@ -117,7 +118,7 @@ export const CardBox = styled.div `
 
   @media (min-height: 844px){
     flex-direction: column;
-    height: 350px;
+    height: 335px;
     align-items: center;
     margin-left: 0;
 

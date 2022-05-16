@@ -9,7 +9,7 @@ import { useState } from "react";
 
 const Home = () => {
   
-  const [currentState, setCurrentState] = useState()
+  const [currentState, setCurrentState] = useState("")
 
   return (
     <div>
@@ -30,7 +30,7 @@ const Home = () => {
           </S.NavImgDiv>
           <S.LocationDiv>
             <img src={LocationLogo} alt="location"></img>
-            <h2>{currentState}</h2>
+            <h2>{currentState !== "" ? currentState : "Selecione seu Estado"}</h2>
           </S.LocationDiv>
           <S.CardBox>
             <img src={ImgCard1} alt="Dj Henrique de Ferraz"></img>

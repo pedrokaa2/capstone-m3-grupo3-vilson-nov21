@@ -7,8 +7,8 @@ export const MenuDesktop = ({setCurrentState}) => {
     <S.DisplayMenuDesk>
        <Link to="/newEvent">NOVO EVENTO</Link>
         <Link to="/about">SOBRE</Link>
-        <select defaultValue="" onChange={(event) => setCurrentState(event.target.value)}>
-          <option value="">ESTADO</option>
+        <select onChange={(event) => setCurrentState(event.target.value)}>
+          <option value="Selecione seu Estado">ESTADO</option>
           <option value="Acre">Acre</option>
           <option value="Alagoas">Alagoas</option>
           <option value="Amapá">Amapá</option>

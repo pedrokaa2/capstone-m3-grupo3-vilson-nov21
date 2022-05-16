@@ -40,10 +40,6 @@ const Login = () => {
     login(data, history);
   };
 
-  if (authenticated) {
-    return <Redirect to="/" />;
-  }
-
   return (
     <Container>
       <Content>

@@ -23,7 +23,7 @@ export const AuthenticatedProvider = ({ children }) => {
 
         setAuthenticated(true);
 
-        history.push("/home");
+        history.push("/");
         toast.success("Login efetuado com sucesso");
       })
       .catch((err) => toast.error("email ou senha incorretos"));
