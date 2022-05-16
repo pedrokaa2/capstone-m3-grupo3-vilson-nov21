@@ -1,16 +1,16 @@
 import GlobalStyle from "./global/global";
-import Login from "./Pages/Login";
-import Home from "./Pages/Home";
-import { Switch } from "react-router-dom/cjs/react-router-dom.min";
-import { Route } from "react-router-dom";
-import { Router } from "react-router-dom";
+import Routes from "./Routes";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+
 
 function App() {
   return (
     <>
       <GlobalStyle />
+
+      <Routes />
+
       <ToastContainer
         position="top-right"
         autoClose={5000}
@@ -23,8 +23,6 @@ function App() {
         pauseOnHover
         theme="light"
       />
-
-      <Login />
     </>
   );
 }

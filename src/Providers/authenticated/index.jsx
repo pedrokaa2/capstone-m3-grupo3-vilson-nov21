@@ -8,7 +8,7 @@ export const AuthenticatedProvider = ({ children }) => {
   const [authenticated, setAuthenticated] = useState(false);
 
   useEffect(() => {
-    const token = JSON.parse(localStorage.getItem("@borala: token"));
+    const token = JSON.parse(localStorage.getItem("@borala:token"));
     if (token) {
       return setAuthenticated(true);
     }
@@ -23,7 +23,7 @@ export const AuthenticatedProvider = ({ children }) => {
 
         setAuthenticated(true);
 
-        history.push("/home");
+        history.push("/");
         toast.success("Login efetuado com sucesso");
       })
       .catch((err) => toast.error("email ou senha incorretos"));
