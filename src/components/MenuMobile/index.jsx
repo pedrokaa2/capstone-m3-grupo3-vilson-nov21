@@ -45,8 +45,7 @@ export const MenuMobile = () => {
           <option value="SP">São Paulo</option>
           <option value="SE">Sergipe</option>
           <option value="TO">Tocantins</option>
-        </select>
-        
+        </select>        
       </S.HandleMenu>
     </S.DisplayMenuMob>
   );
