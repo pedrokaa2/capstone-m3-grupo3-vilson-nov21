@@ -26,7 +26,7 @@ export const DivMain = styled.div `
 
 export const NavImgDiv = styled.div `
   width: 100%;
-  min-height: 250px;
+  min-height: 120px;
   background-image: url(${navImage});
   background-position: center;
   background-repeat: no-repeat;
@@ -46,6 +46,10 @@ export const NavImgDiv = styled.div `
   img {
     width: 25%;
     margin-left: 2px;
+  }
+
+  @media (min-height: 844px){
+    min-height: 250px;
   }
 
   @media (min-width: 768px) {
@@ -77,7 +81,7 @@ export const NavImgDiv = styled.div `
 export const LocationDiv = styled.div `
   display: flex;
   align-items: center;
-  justify-content: flex-start;
+  justify-content: center;
   margin: 30px;
 
 
@@ -88,6 +92,8 @@ export const LocationDiv = styled.div `
   }
 
   @media (max-width: 768px){
+    justify-content: flex-start;
+
     h2 {
       font-size: 20px;
     }
@@ -131,6 +137,7 @@ export const CardBoxDiv = styled.div `
   margin-bottom: 15px;
   margin-left: 2%;
   flex-direction: column;
+  height: 280px;
 
   @media (min-width: 768px){
     flex-direction: row;

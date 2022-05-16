@@ -86,6 +86,86 @@ const Home = () => {
                 </div>
                </S.cardDescription>
             </S.CardBoxDiv>
+            <S.CardBoxDiv>
+              <img src={ImgCard1} alt="Dj Henrique de Ferraz"></img>
+              <S.cardDescription>
+                <h3>Revoada da Oficina - DJ Henrique de Ferraz</h3>
+                <div>
+                  <h4>São Paulo - SP</h4>
+                  <h5>21 MAI</h5>
+                </div>
+               </S.cardDescription>
+            </S.CardBoxDiv>
+            <S.CardBoxDiv>
+              <img src={ImgCard1} alt="Dj Henrique de Ferraz"></img>
+              <S.cardDescription>
+                <h3>Revoada da Oficina - DJ Henrique de Ferraz</h3>
+                <div>
+                  <h4>São Paulo - SP</h4>
+                  <h5>21 MAI</h5>
+                </div>
+               </S.cardDescription>
+            </S.CardBoxDiv>
+            <S.CardBoxDiv>
+              <img src={ImgCard1} alt="Dj Henrique de Ferraz"></img>
+              <S.cardDescription>
+                <h3>Revoada da Oficina - DJ Henrique de Ferraz</h3>
+                <div>
+                  <h4>São Paulo - SP</h4>
+                  <h5>21 MAI</h5>
+                </div>
+               </S.cardDescription>
+            </S.CardBoxDiv>
+            <S.CardBoxDiv>
+              <img src={ImgCard1} alt="Dj Henrique de Ferraz"></img>
+              <S.cardDescription>
+                <h3>Revoada da Oficina - DJ Henrique de Ferraz</h3>
+                <div>
+                  <h4>São Paulo - SP</h4>
+                  <h5>21 MAI</h5>
+                </div>
+               </S.cardDescription>
+            </S.CardBoxDiv>
+            <S.CardBoxDiv>
+              <img src={ImgCard1} alt="Dj Henrique de Ferraz"></img>
+              <S.cardDescription>
+                <h3>Revoada da Oficina - DJ Henrique de Ferraz</h3>
+                <div>
+                  <h4>São Paulo - SP</h4>
+                  <h5>21 MAI</h5>
+                </div>
+               </S.cardDescription>
+            </S.CardBoxDiv>
+            <S.CardBoxDiv>
+              <img src={ImgCard1} alt="Dj Henrique de Ferraz"></img>
+              <S.cardDescription>
+                <h3>Revoada da Oficina - DJ Henrique de Ferraz</h3>
+                <div>
+                  <h4>São Paulo - SP</h4>
+                  <h5>21 MAI</h5>
+                </div>
+               </S.cardDescription>
+            </S.CardBoxDiv>
+            <S.CardBoxDiv>
+              <img src={ImgCard1} alt="Dj Henrique de Ferraz"></img>
+              <S.cardDescription>
+                <h3>Revoada da Oficina - DJ Henrique de Ferraz</h3>
+                <div>
+                  <h4>São Paulo - SP</h4>
+                  <h5>21 MAI</h5>
+                </div>
+               </S.cardDescription>
+            </S.CardBoxDiv>
+            <S.CardBoxDiv>
+              <img src={ImgCard1} alt="Dj Henrique de Ferraz"></img>
+              <S.cardDescription>
+                <h3>Revoada da Oficina - DJ Henrique de Ferraz</h3>
+                <div>
+                  <h4>São Paulo - SP</h4>
+                  <h5>21 MAI</h5>
+                </div>
+               </S.cardDescription>
+            </S.CardBoxDiv>
           </S.CardBox>
         </main>
         <S.copyrightSpan>
