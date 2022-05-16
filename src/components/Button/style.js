@@ -5,7 +5,7 @@ export const Container = styled.button`
   color: var(--white);
   border-radius: 15px;
   border: none;
-  min-width: 272px;
+  min-width: 240px;
   max-width: 352px;
   height: 60px;
   font-family: "Nunito", sans-serif;
