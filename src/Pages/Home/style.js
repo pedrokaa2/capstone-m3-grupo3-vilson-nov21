@@ -70,17 +70,20 @@ export const NavImgDiv = styled.div `
 export const LocationDiv = styled.div `
   display: flex;
   align-items: center;
-  margin: 10% 10%;
+  justify-content: flex-start;
+  margin: 30px;
 
 
   h2 {
-    margin-left: 2%;
+    margin-left: 3%;
   }
 `
 
 export const CardBox = styled.div `
   display: flex;
-  justify-content: center;
+  height: 150px;
+  overflow-x: scroll;
+  margin-left: 30px;
 
   img {
     width: 150px;
@@ -96,8 +99,7 @@ export const cardDescription = styled.div `
   }
   div {
     display: flex;
-    align-items: center;
-    margin: 5px 10px;
+    margin: 15px 10px;
     flex-direction: column;
   }
   h4 {
@@ -108,6 +110,7 @@ export const cardDescription = styled.div `
   h5 {
     color: var(--blue);
     font-size: 12px;
+    margin-top: 20px;
   }
 
   @media (min-width: 1200px) {
@@ -116,4 +119,13 @@ export const cardDescription = styled.div `
       width: 200px;
     }
   }
+`
+
+export const copyrightSpan = styled.span `
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--darkblue);
+  font-size: 12px;
+  margin-top: 100px;
 `
