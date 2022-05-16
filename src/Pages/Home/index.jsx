@@ -1,4 +1,5 @@
 import * as S from "./style";
+import api from "../../service/api";
 import Logo from "../../img/boralalogo.png";
 import LogoNav from "../../assets/boralanav.png";
 import LocationLogo from "../../assets/locationVector.svg";
@@ -6,10 +7,22 @@ import ImgCard1 from "../../assets/DJHenriqueDeFerrazTeste.svg"
 import { MenuDesktop } from "../../components/MenuDesktop";
 import { MenuMobile } from "../../components/MenuMobile";
 import { useState } from "react";
+import { useEffect } from "react";
 
 const Home = () => {
   
   const [currentState, setCurrentState] = useState("")
+
+  const [event, setEvent] = useState([])
+
+  useEffect(() => {
+
+    api.get(`/events/`).then(response => {
+        console.log(response.data)
+        setEvent(response.data.event)
+    })
+
+  })
 
   return (
     <div>
