@@ -3,11 +3,9 @@ import Menu from "../../img/menu3barras.png";
 import { useState } from "react";
 import { Link, useHistory } from "react-router-dom";
 import { FaSearch } from "react-icons/fa";
-import { useAuthenticated } from "../../Providers/authenticated/index.jsx";
 
 export const MenuMobile = ({ setCurrentState }) => {
   const [isOpen, setIsOpen] = useState(false);
-  const { authenticated, setAuthenticated } = useAuthenticated;
   const history = useHistory();
 
   return (
@@ -57,12 +55,11 @@ export const MenuMobile = ({ setCurrentState }) => {
           <input type="text" placeholder="EVENTO, CIDADE, CATEGORIA..." />
         </S.DivInput>
         <S.DivButton>
-          {!authenticated ? (
+          {localStorage.getItem("@borala:token") ? (
             <button
               onClick={() => {
                 history.push("/login");
                 localStorage.removeItem("@borala:token");
-                setAuthenticated(false);
               }}
             >
               SAIR
