@@ -19,7 +19,7 @@ export const DisplayMenuDesk = styled.div `
 
 export const DivSelect = styled.div `
   display: flex;
-  width: 20%;
+  width: 10%;
   justify-content: center;
   border: 1px solid var(--white);
   border-radius: 20px;
