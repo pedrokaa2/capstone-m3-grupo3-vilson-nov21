@@ -15,33 +15,33 @@ export const MenuDesktop = ({setCurrentState}) => {
             onChange={(event) => setCurrentState(event.target.value)}
           >
             <option value="Selecione seu Estado">ESTADO</option>
-            <option value="Acre">ACRE</option>
-            <option value="Alagoas">ALAGOAS</option>
-            <option value="Amapá">AMAPÁ</option>
-            <option value="Amazonas">AMAZONAS</option>
-            <option value="Bahia">BAHIA</option>
-            <option value="Ceará">CEARÁ</option>
-            <option value="Distrito Federal">DISTRITO FEDERAL</option>
-            <option value="Espírito Santo">ESPÍRITO SANTO</option>
-            <option value="Goiás">GOIÁS</option>
-            <option value="Maranhão">MARANHÃO</option>
-            <option value="Mato Grosso">MATO GROSSO</option>
-            <option value="Mato Grosso do Sul">MATO GROSSO DO SUL</option>
-            <option value="Minas Gerais">MINAS GERAIS</option>
-            <option value="Pará">PARÁ</option>
-            <option value="Paraíba">PARAÍBA</option>
-            <option value="Paraná">PARANÁ</option>
-            <option value="Pernambuco">PERNAMBUCO</option>
-            <option value="Piauí">PIAUÍ</option>
-            <option value="Rio de Janeiro">RIO DE JANEIRO</option>
-            <option value="Rio Grande do Norte">RIO GRANDE DO NORTE</option>
-            <option value="Rio Grande do Sul">RIO GRANDE DO SUL</option>
-            <option value="Rondônia">RONDÔNIA</option>
-            <option value="Roraima">RORAIMA</option>
-            <option value="Santa Catarina">SANTA CATARINA</option>
-            <option value="São Paulo">SÃO PAULO</option>
-            <option value="Sergipe">SERGIPE</option>
-            <option value="Tocantins">TOCANTINS</option>
+            <option value="Acre">AC</option>
+            <option value="Alagoas">AL</option>
+            <option value="Amapá">AP</option>
+            <option value="Amazonas">AM</option>
+            <option value="Bahia">BA</option>
+            <option value="Ceará">CE</option>
+            <option value="Distrito Federal">DF</option>
+            <option value="Espírito Santo">ES</option>
+            <option value="Goiás">GO</option>
+            <option value="Maranhão">MA</option>
+            <option value="Mato Grosso">MT</option>
+            <option value="Mato Grosso do Sul">MS</option>
+            <option value="Minas Gerais">MG</option>
+            <option value="Pará">PA</option>
+            <option value="Paraíba">PB</option>
+            <option value="Paraná">PR</option>
+            <option value="Pernambuco">PE</option>
+            <option value="Piauí">PI</option>
+            <option value="Rio de Janeiro">RJ</option>
+            <option value="Rio Grande do Norte">RN</option>
+            <option value="Rio Grande do Sul">RS</option>
+            <option value="Rondônia">RO</option>
+            <option value="Roraima">RR</option>
+            <option value="Santa Catarina">SC</option>
+            <option value="São Paulo">SP</option>
+            <option value="Sergipe">SE</option>
+            <option value="Tocantins">TO</option>
           </select>
         </S.DivSelect>
         <S.DivInput>
