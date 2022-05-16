@@ -79,3 +79,9 @@ export const Inputs = styled.input `
     margin-bottom: 20px;
   }
 `;
+
+export const Error = styled.span `
+  color: var(--orange);
+
+  font-size: 15px;
+`;

@@ -14,6 +14,7 @@ import {
   Content,
   AnimationContainer,
   Inputs,
+  Error,
 } from "./styled";
 
 const Login = () => {
@@ -63,13 +64,13 @@ const Login = () => {
               </p>
               <Inputs type="text" placeholder="EMAIL" {...register("email")} />
 
-              <span>{errors.email?.message}</span>
+              <Error>{errors.email?.message}</Error>
               <Inputs
                 type="password"
                 placeholder="SENHA"
                 {...register("password")}
               />
-              <span>{errors.password?.message}</span>
+              <Error>{errors.password?.message}</Error>
               <div>
                 <Button type="submit">ENTRAR</Button>
               </div>
