@@ -77,7 +77,7 @@ export const NavImgDiv = styled.div `
 export const LocationDiv = styled.div `
   display: flex;
   align-items: center;
-  justify-content: flex-start;
+  justify-content: center;
   margin: 30px;
 
 
@@ -88,6 +88,8 @@ export const LocationDiv = styled.div `
   }
 
   @media (max-width: 768px){
+    justify-content: flex-start;
+
     h2 {
       font-size: 20px;
     }
