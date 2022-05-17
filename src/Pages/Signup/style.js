@@ -52,7 +52,7 @@ export const AnimationContainer = styled.div`
 
   form {
     margin: 80px 0;
-    width: 340px;
+    width: 300px;
     text-align: center;
 
     h1 {
@@ -75,6 +75,12 @@ export const AnimationContainer = styled.div`
     }
     img {
       width: 17%;
+    }
+  }
+
+  @media (min-width: 768px){
+    form {
+      width: 340px;
     }
   }
 `;

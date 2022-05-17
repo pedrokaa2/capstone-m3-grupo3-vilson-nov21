@@ -82,17 +82,18 @@ export const LocationDiv = styled.div `
   display: flex;
   align-items: center;
   justify-content: center;
-  margin: 30px;
+  margin: 30px 30px 0px 30px;
 
 
   h2 {
     margin-left: 15px;
     text-transform: uppercase;
-    font-size: 15px;
+    font-size: 35px;
   }
 
   @media (max-width: 768px){
     justify-content: flex-start;
+    margin-bottom: 30px;
 
     h2 {
       font-size: 20px;
@@ -132,7 +133,6 @@ export const CardBox = styled.div `
 
 export const CardBoxDiv = styled.div `
   display: flex;
-  align-items: center;
   justify-content: space-between;
   margin-bottom: 15px;
   margin-left: 2%;
@@ -141,6 +141,7 @@ export const CardBoxDiv = styled.div `
 
   @media (min-width: 768px){
     flex-direction: row;
+    align-items: center;
   }
 `
 

@@ -51,6 +51,10 @@ const Login = () => {
                 Não tem uma conta <img src={BoraLaLogo} alt="borala"></img> ?
                 Faça seu <Link to="/signup">cadastro</Link>
               </p>
+              <p className="Home">
+                Você não é uma empresa <img src={BoraLaLogo} alt="borala"></img> ?
+                Entre na <Link to="/">Home</Link>
+              </p>
               <Inputs type="text" placeholder="EMAIL" {...register("email")} />
 
               <Error>{errors.email?.message}</Error>

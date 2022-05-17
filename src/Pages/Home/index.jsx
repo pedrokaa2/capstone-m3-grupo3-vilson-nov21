@@ -3,7 +3,7 @@ import api from "../../service/api";
 import Logo from "../../img/boralalogo.png";
 import LogoNav from "../../assets/boralanav.png";
 import LocationLogo from "../../assets/locationVector.svg";
-import ImgCard1 from "../../assets/DJHenriqueDeFerrazTeste.svg"
+import ImgCard1 from "../../assets/DJHenriqueDeFerrazTeste.svg";
 import { MenuDesktop } from "../../components/MenuDesktop";
 import { MenuMobile } from "../../components/MenuMobile";
 import { useState } from "react";
@@ -39,7 +39,6 @@ const Home = () => {
     }
   }, [currentState, currentInput])
 
-
   return (
     <div>
       <S.Header>
@@ -61,7 +60,9 @@ const Home = () => {
           </S.NavImgDiv>
           <S.LocationDiv>
             <img src={LocationLogo} alt="location"></img>
-            <h2>{currentState !== "" ? currentState : "Selecione seu Estado"}</h2>
+            <h2>
+              {currentState !== "" ? currentState : "Selecione seu Estado"}
+            </h2>
           </S.LocationDiv>
           <S.CardBox>
             <S.CardBoxDiv>
@@ -92,9 +93,7 @@ const Home = () => {
             ))}
           </S.CardBox>
         </main>
-        <S.copyrightSpan>
-          Copyright &#169; 2022 boralá
-        </S.copyrightSpan>
+        <S.copyrightSpan>Copyright &#169; 2022 boralá</S.copyrightSpan>
       </S.DivMain>
     </div>
   );
