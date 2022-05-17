@@ -8,21 +8,37 @@ import { MenuDesktop } from "../../components/MenuDesktop";
 import { MenuMobile } from "../../components/MenuMobile";
 import { useState } from "react";
 import { useEffect } from "react";
+import CardEvent from "../../components/CardEvent";
 
 const Home = () => {
   
   const [currentState, setCurrentState] = useState("")
+  const [currentInput, setCurrentInput] = useState("")
 
-  const [event, setEvent] = useState([])
+  const [events, setEvents] = useState([])
 
   useEffect(() => {
+    if(currentInput === ""){
+      api.get(`/events/`).then(response => {
+        if(currentState === ""){
+          setEvents(response.data)
+          console.log(response.data)
+        }else{
+          const filteredEvents = response.data.filter((event) => (
+            event.state === currentState
+          ))
+          setEvents(filteredEvents)
+        }
+      })
+    }else{
+      const filteredEvents = events.filter((event) => (
+        event.city.includes(currentInput) || event.name.includes(currentInput)
+      )) 
+      console.log(filteredEvents)
+      setEvents(filteredEvents)
+    }
+  }, [currentState, currentInput])
 
-    api.get(`/events/`).then(response => {
-        console.log(response.data)
-        setEvent(response.data.event)
-    })
-
-  })
 
   return (
     <div>
@@ -30,7 +46,9 @@ const Home = () => {
         <figure>
           <img src={Logo} alt="Logo"></img>
         </figure>
-        <MenuDesktop setCurrentState={setCurrentState} />
+        <MenuDesktop 
+        setCurrentState={setCurrentState}
+        setCurrentInput={setCurrentInput} />
         <MenuMobile setCurrentState={setCurrentState} />
       </S.Header>
       <S.DivMain>
@@ -56,116 +74,22 @@ const Home = () => {
                 </div>
                </S.cardDescription>
             </S.CardBoxDiv>
-            <S.CardBoxDiv>
-              <img src={ImgCard1} alt="Dj Henrique de Ferraz"></img>
-              <S.cardDescription>
-                <h3>Revoada da Oficina - DJ Henrique de Ferraz</h3>
-                <div>
-                  <h4>São Paulo - SP</h4>
-                  <h5>21 MAI</h5>
-                </div>
-               </S.cardDescription>
-            </S.CardBoxDiv>
-            <S.CardBoxDiv>
-              <img src={ImgCard1} alt="Dj Henrique de Ferraz"></img>
-              <S.cardDescription>
-                <h3>Revoada da Oficina - DJ Henrique de Ferraz</h3>
-                <div>
-                  <h4>São Paulo - SP</h4>
-                  <h5>21 MAI</h5>
-                </div>
-               </S.cardDescription>
-            </S.CardBoxDiv>
-            <S.CardBoxDiv>
-              <img src={ImgCard1} alt="Dj Henrique de Ferraz"></img>
-              <S.cardDescription>
-                <h3>Revoada da Oficina - DJ Henrique de Ferraz</h3>
-                <div>
-                  <h4>São Paulo - SP</h4>
-                  <h5>21 MAI</h5>
-                </div>
-               </S.cardDescription>
-            </S.CardBoxDiv>
-            <S.CardBoxDiv>
-              <img src={ImgCard1} alt="Dj Henrique de Ferraz"></img>
-              <S.cardDescription>
-                <h3>Revoada da Oficina - DJ Henrique de Ferraz</h3>
-                <div>
-                  <h4>São Paulo - SP</h4>
-                  <h5>21 MAI</h5>
-                </div>
-               </S.cardDescription>
-            </S.CardBoxDiv>
-            <S.CardBoxDiv>
-              <img src={ImgCard1} alt="Dj Henrique de Ferraz"></img>
-              <S.cardDescription>
-                <h3>Revoada da Oficina - DJ Henrique de Ferraz</h3>
-                <div>
-                  <h4>São Paulo - SP</h4>
-                  <h5>21 MAI</h5>
-                </div>
-               </S.cardDescription>
-            </S.CardBoxDiv>
-            <S.CardBoxDiv>
-              <img src={ImgCard1} alt="Dj Henrique de Ferraz"></img>
-              <S.cardDescription>
-                <h3>Revoada da Oficina - DJ Henrique de Ferraz</h3>
-                <div>
-                  <h4>São Paulo - SP</h4>
-                  <h5>21 MAI</h5>
-                </div>
-               </S.cardDescription>
-            </S.CardBoxDiv>
-            <S.CardBoxDiv>
-              <img src={ImgCard1} alt="Dj Henrique de Ferraz"></img>
-              <S.cardDescription>
-                <h3>Revoada da Oficina - DJ Henrique de Ferraz</h3>
-                <div>
-                  <h4>São Paulo - SP</h4>
-                  <h5>21 MAI</h5>
-                </div>
-               </S.cardDescription>
-            </S.CardBoxDiv>
-            <S.CardBoxDiv>
-              <img src={ImgCard1} alt="Dj Henrique de Ferraz"></img>
-              <S.cardDescription>
-                <h3>Revoada da Oficina - DJ Henrique de Ferraz</h3>
-                <div>
-                  <h4>São Paulo - SP</h4>
-                  <h5>21 MAI</h5>
-                </div>
-               </S.cardDescription>
-            </S.CardBoxDiv>
-            <S.CardBoxDiv>
-              <img src={ImgCard1} alt="Dj Henrique de Ferraz"></img>
-              <S.cardDescription>
-                <h3>Revoada da Oficina - DJ Henrique de Ferraz</h3>
-                <div>
-                  <h4>São Paulo - SP</h4>
-                  <h5>21 MAI</h5>
-                </div>
-               </S.cardDescription>
-            </S.CardBoxDiv>
-            <S.CardBoxDiv>
-              <img src={ImgCard1} alt="Dj Henrique de Ferraz"></img>
-              <S.cardDescription>
-                <h3>Revoada da Oficina - DJ Henrique de Ferraz</h3>
-                <div>
-                  <h4>São Paulo - SP</h4>
-                  <h5>21 MAI</h5>
-                </div>
-               </S.cardDescription>
-            </S.CardBoxDiv>
-            <S.CardBoxDiv>
-              <img src={ImgCard1} alt="Dj Henrique de Ferraz"></img>
-              <S.cardDescription>
-                <h3>Revoada da Oficina - DJ Henrique de Ferraz</h3>
-                <div>
-                  <h4>São Paulo - SP</h4>
-                  <h5>21 MAI</h5>
-                </div>
-               </S.cardDescription>
-            </S.CardBoxDiv>
+            {events.map((event) => (
+              <S.CardBoxDiv
+              key={event.id}
+              >
+                <img src={event.imgUrl} alt={event.name} />
+                <S.cardDescription>
+                  <CardEvent
+                  date={event.date}
+                  address={event.address}
+                  name={event.name}
+                  city={event.city}
+                  state={event.state}
+                  />
+                </S.cardDescription>
+              </S.CardBoxDiv>
+            ))}
           </S.CardBox>
         </main>
         <S.copyrightSpan>

@@ -1,17 +1,18 @@
 
 
-function CardEvent ({ imgUrl, date, address, name }) {
+function CardEvent ({ date, city, name, state }) {
 
+    return(
     <div>
 
-        <img src={imgUrl} alt={name} />
         <h3>{name}</h3>
         <div>
-            <h4>{address}</h4>
+            <h4>{city} - {state}</h4>
             <h5>{date}</h5>
         </div>
 
     </div>
+    )
 
 }
 
