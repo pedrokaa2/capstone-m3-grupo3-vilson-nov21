@@ -4,14 +4,9 @@ import * as S from "./style";
 import { useEffect } from "react";
 import { useEvent } from "../../Providers/event";
 import {
-  Header,
   Logo,
   SpanMeusEventos,
   ImgEvent,
-  CardBox,
-  CardBoxDiv,
-  CardDescription,
-  Li,
   UL,
   DivContainer,
 } from "./style";
@@ -33,7 +28,11 @@ const MyEvents = () => {
         <Link to="/">
           <Logo src={LogoImg} alt="logo borala" />
         </Link>
-        <SpanMeusEventos> Meus Eventos</SpanMeusEventos>
+        <SpanMeusEventos>
+        <Link to="/myEvents">
+          MEUS EVENTOS
+        </Link>
+        </SpanMeusEventos>
       </S.Header>
       <ImgEvent />
 
@@ -58,7 +57,7 @@ const MyEvents = () => {
                       </h4>
                     </S.Li>
                     <S.Li key={id}>
-                      <h5>{listEvents.date}</h5>
+                      <h5>{listEvents.date.split('-').reverse().join('/')}</h5>
                     </S.Li>
                   </S.CardDescription>
                 </DivContainer>

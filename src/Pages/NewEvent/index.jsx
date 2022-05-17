@@ -44,7 +44,7 @@ const NewEvent = ({ isEditting }) => {
     resolver: yupResolver(formSchema),
     defaultValues: isEditting && {
       name: actualEvent.name,
-      date: actualEvent.date,
+      date: actualEvent.date.split('-').reverse().join('/'),
       city: actualEvent.city,
       imgUrl: actualEvent.imgUrl,
       eventPage: actualEvent.eventPage,
@@ -67,6 +67,11 @@ const NewEvent = ({ isEditting }) => {
         <Link to="/">
           <Logo src={LogoImg} alt="logo borala" />
         </Link>
+        <SpanNovoEvento>
+        <Link to="/myEvents">
+          MEUS EVENTOS
+        </Link>
+        </SpanNovoEvento>
         <SpanNovoEvento>
           {isEditting ? "EDITAR EVENTO" : "NOVO EVENTO"}
         </SpanNovoEvento>

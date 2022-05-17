@@ -17,7 +17,7 @@ export const EventProvider = ({ children }) => {
     api
       .post("/events/", data, config)
       .then((response) => {
-        history.push("/home");
+        history.push("/myEvents");
         toast.success("Evento cadastrado!");
       })
       .catch((err) => {

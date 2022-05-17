@@ -139,6 +139,12 @@ export const CardBoxDiv = styled.div `
   flex-direction: column;
   height: 280px;
 
+  img {
+    height: 150px;
+    object-fit: cover;
+    border-radius: 20px;
+  }
+
   @media (min-width: 768px){
     flex-direction: row;
     align-items: center;
@@ -151,6 +157,7 @@ export const cardDescription = styled.div `
     font-size: 12px;
     width: 75px;
     margin: 5px 10px;
+    text-transform: capitalize;
   }
   div {
     display: flex;
