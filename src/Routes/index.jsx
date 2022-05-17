@@ -27,6 +27,9 @@ const Routes = () => {
       <Route exact path="/myEvents">
         <MyEvents />
       </Route>
+      <Route exact path="/editEvent">
+        <Events isEditting />
+      </Route>
     </Switch>
   );
 };
