@@ -2,8 +2,9 @@ import { Switch, Route } from "react-router-dom";
 import Events from "../Pages/NewEvent";
 import Home from "../Pages/Home";
 import Login from "../Pages/Login";
-import Signup from "../Pages/Signup"
+import Signup from "../Pages/Signup";
 import About from "../Pages/About";
+import MyEvents from "../Pages/MyEvents";
 
 const Routes = () => {
   return (
@@ -22,6 +23,9 @@ const Routes = () => {
       </Route>
       <Route exact path="/newEvent">
         <Events />
+      </Route>
+      <Route exact path="/myEvents">
+        <MyEvents />
       </Route>
     </Switch>
   );
