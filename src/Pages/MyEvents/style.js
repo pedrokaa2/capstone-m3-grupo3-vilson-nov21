@@ -7,9 +7,17 @@ export const Header = styled.header `
   align-items: center;
   height: 100px;
   padding: 0 20px;
+
+  span {
+    text-transform: uppercase;
+    color: var(--darkblue);
+    font-weight: 800;
+  }
+
   @media (min-width: 764px) {
     padding: 0 40px;
   }
+
 `;
 
 export const UL = styled.ul `
@@ -37,6 +45,10 @@ export const SpanMeusEventos = styled.span `
   font-weight: bold;
   font-size: 14px;
 
+  a {
+    color: var(--darkblue)
+  }
+
   @media (min-width: 764px) {
     font-size: 24px;
   }
@@ -44,15 +56,13 @@ export const SpanMeusEventos = styled.span `
 
 export const ImgEvent = styled.div `
   width: 100%;
-  height: 200px;
+  min-height: 250px;
+  background-color: var(--somewhatblue);
   background-image: url(${EventImg});
   background-position: center;
   background-repeat: no-repeat;
-  background-size: 100% auto;
+  background-size: contain;
   max-height: 500px;
-  @media (min-width: 764px) {
-    height: 500px;
-  }
 `;
 
 export const CardBox = styled.div `
@@ -63,6 +73,10 @@ export const CardBox = styled.div `
 
   img {
     width: 150px;
+  }
+
+  @media (min-width: 490px) {
+    justify-content: center;
   }
 
   @media (min-width: 768px) {
@@ -85,13 +99,19 @@ export const CardBox = styled.div `
 
 export const CardBoxDiv = styled.div `
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   margin-bottom: 15px;
   margin-left: 2%;
   flex-direction: column;
   height: 280px;
 
-  @media (min-width: 768px) {
+  img {
+    height: 150px;
+    object-fit: cover;
+    border-radius: 20px;
+  }
+
+  @media (min-width: 500px) {
     flex-direction: row;
     align-items: center;
   }
@@ -102,32 +122,31 @@ export const CardDescription = styled.div `
     color: var(--darkblue);
     font-size: 12px;
     width: 75px;
-    margin: 5px 10px;
-  }
-  div {
-    display: flex;
     margin: 15px 10px;
-    flex-direction: column;
-
-    margin: 5px;
+    text-transform: capitalize;
+    text-align: center;
   }
   h4 {
     color: var(--orange);
     margin-right: 3px;
     font-size: 12px;
     margin-left: 11px;
+    text-align: center;
+    width: 75px;
   }
   h5 {
     color: var(--blue);
     font-size: 12px;
     margin-top: 20px;
     margin-left: 10px;
+    text-align: center;
+    width: 75px;
   }
 
   @media (min-width: 1200px) {
-    h3 {
-      font-size: 18px;
-      width: 200px;
+    h3, h4, h5 {
+      font-size: 14px;
+      width: 120px;
     }
   }
 

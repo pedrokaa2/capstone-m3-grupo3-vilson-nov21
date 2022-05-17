@@ -65,16 +65,6 @@ const Home = () => {
             </h2>
           </S.LocationDiv>
           <S.CardBox>
-            <S.CardBoxDiv>
-              <img src={ImgCard1} alt="Dj Henrique de Ferraz"></img>
-              <S.cardDescription>
-                <h3>Revoada da Oficina - DJ Henrique de Ferraz</h3>
-                <div>
-                  <h4>São Paulo - SP</h4>
-                  <h5>21 MAI</h5>
-                </div>
-               </S.cardDescription>
-            </S.CardBoxDiv>
             {events.map((event) => (
               <S.CardBoxDiv
               key={event.id}
@@ -82,7 +72,7 @@ const Home = () => {
                 <img src={event.imgUrl} alt={event.name} />
                 <S.cardDescription>
                   <CardEvent
-                  date={event.date}
+                  date={event.date.split('-').reverse().join('/')}
                   address={event.address}
                   name={event.name}
                   city={event.city}

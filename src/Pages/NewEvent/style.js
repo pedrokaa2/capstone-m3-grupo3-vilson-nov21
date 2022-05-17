@@ -17,6 +17,10 @@ export const SpanNovoEvento = styled.span`
   font-weight: bold;
   font-size: 14px;
 
+  a {
+    color: var(--darkblue)
+  }
+
   @media (min-width: 764px) {
     font-size: 24px;
   }
