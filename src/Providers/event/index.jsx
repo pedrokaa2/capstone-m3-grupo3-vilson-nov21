@@ -60,8 +60,32 @@ export const EventProvider = ({ children }) => {
     return dataReturn;
   };
 
+  const eventUpdate = (data, history) => {
+    const token = JSON.parse(localStorage.getItem("@borala:token"));
+    data.userId = Number(jwt_decode(token).sub);
+    const config = {
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
+    };
+    api
+      .patch(`/events/${data.id}`, data, config)
+      .then((response) => {
+        history.push("/");
+        toast.success("Evento atualizado!");
+      })
+      .catch((err) => {
+        console.log(err);
+        console.log(data);
+        console.log(config);
+        console.log("TOKEN");
+        console.log(token);
+        toast.error("Algo errado ocorreu!");
+      });
+  };
+
   return (
-    <EventContext.Provider value={{ eventRegister, eventList }}>
+    <EventContext.Provider value={{ eventRegister, eventList, eventUpdate }}>
       {" "}
       {children}{" "}
     </EventContext.Provider>

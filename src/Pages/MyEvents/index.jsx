@@ -1,32 +1,33 @@
-import { useContext, useState } from "react";
-import { EventContext } from "../../Providers/event";
-import { Redirect, useHistory } from "react-router-dom";
+import { useState } from "react";
+
 import { useEffect } from "react";
 import { useEvent } from "../../Providers/event";
 
 const MyEvents = () => {
   const { eventList } = useEvent();
-  const [data, setData] = useState([]);
+  const [myEvents, setmyEvents] = useState([]);
   useEffect(() => {
     eventList().then((listaEventos) => {
-      setData(listaEventos);
+      setmyEvents(listaEventos);
     });
   }, []);
 
   return (
     <div>
-      <h1>MEUS EVENTOS</h1>
+      <h1>MEUS EVENTOS!!!</h1>
+
+      {/* trazer os cards da home e listar aqui*/}
 
       <ul>
-        {data.map((lista, id) => {
+        {myEvents.map((listEvents, id) => {
           return (
             <>
-              <li key={id}> Nome: {lista.name}</li>
-              <li key={id}> Data: {lista.date}</li>
-              <li key={id}> Cidade: {lista.city}</li>
-              <li key={id}> Estado: {lista.state}</li>
-              <li key={id}> Url: {lista.imgUrl}</li>
-              <li key={id}> Pagina do evento: {lista.eventPage}</li>
+              <li key={id}> Nome: {listEvents.name}</li>
+              <li key={id}> Data: {listEvents.date}</li>
+              <li key={id}> Cidade: {listEvents.city}</li>
+              <li key={id}> Estado: {listEvents.state}</li>
+              <li key={id}> Url: {listEvents.imgUrl}</li>
+              <li key={id}> Pagina do evento: {listEvents.eventPage}</li>
             </>
           );
         })}
