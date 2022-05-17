@@ -14,7 +14,9 @@ const MyEvents = () => {
 
   return (
     <div>
-      <h1>MEUS EVENTOS</h1>
+      <h1>MEUS EVENTOS!!!</h1>
+
+      {/* trazer os cards da home e listar aqui*/}
 
       <ul>
         {myEvents.map((listEvents, id) => {
