@@ -2,7 +2,7 @@ import * as S from "./style.js"
 import { Link, useHistory } from "react-router-dom"
 import { FaSearch } from "react-icons/fa";
 
-export const MenuDesktop = ({setCurrentState}) => {
+export const MenuDesktop = ({setCurrentState, setCurrentInput}) => {
 
   const history = useHistory();
 
@@ -15,38 +15,39 @@ export const MenuDesktop = ({setCurrentState}) => {
             onChange={(event) => setCurrentState(event.target.value)}
           >
             <option value="Selecione seu Estado">ESTADO</option>
-            <option value="Acre">AC</option>
-            <option value="Alagoas">AL</option>
-            <option value="Amapá">AP</option>
-            <option value="Amazonas">AM</option>
-            <option value="Bahia">BA</option>
-            <option value="Ceará">CE</option>
-            <option value="Distrito Federal">DF</option>
-            <option value="Espírito Santo">ES</option>
-            <option value="Goiás">GO</option>
-            <option value="Maranhão">MA</option>
-            <option value="Mato Grosso">MT</option>
-            <option value="Mato Grosso do Sul">MS</option>
-            <option value="Minas Gerais">MG</option>
-            <option value="Pará">PA</option>
-            <option value="Paraíba">PB</option>
-            <option value="Paraná">PR</option>
-            <option value="Pernambuco">PE</option>
-            <option value="Piauí">PI</option>
-            <option value="Rio de Janeiro">RJ</option>
-            <option value="Rio Grande do Norte">RN</option>
-            <option value="Rio Grande do Sul">RS</option>
-            <option value="Rondônia">RO</option>
-            <option value="Roraima">RR</option>
-            <option value="Santa Catarina">SC</option>
-            <option value="São Paulo">SP</option>
-            <option value="Sergipe">SE</option>
-            <option value="Tocantins">TO</option>
+            <option value="AC">Acre</option>
+	          <option value="AL">Alagoas</option>
+	          <option value="AP">Amapá</option>
+	          <option value="AM">Amazonas</option>
+	          <option value="BA">Bahia</option>
+	          <option value="CE">Ceará</option>
+	          <option value="DF">Distrito Federal</option>
+	          <option value="ES">Espírito Santo</option>
+	          <option value="GO">Goiás</option>
+            <option value="MA">Maranhão</option>
+            <option value="MT">Mato Grosso</option>
+            <option value="MS">Mato Grosso do Sul</option>
+            <option value="MG">Minas Gerais</option>
+            <option value="PA">Pará</option>
+            <option value="PB">Paraíba</option>
+            <option value="PR">Paraná</option>
+            <option value="PE">Pernambuco</option>
+            <option value="PI">Piauí</option>
+            <option value="RJ">Rio de Janeiro</option>
+            <option value="RN">Rio Grande do Norte</option>
+            <option value="RS">Rio Grande do Sul</option>
+            <option value="RO">Rondônia</option>
+            <option value="RR">Roraima</option>
+            <option value="SC">Santa Catarina</option>
+            <option value="SP">São Paulo</option>
+            <option value="SE">Sergipe</option>
+            <option value="TO">Tocantins</option>
           </select>
         </S.DivSelect>
         <S.DivInput>
           <FaSearch color="var(--darkblue)" />
-          <input type="text" placeholder="EVENTO, CIDADE, CATEGORIA..." />
+          <input type="text" placeholder="EVENTO, CIDADE, CATEGORIA..." 
+          onChange={(event) => setCurrentInput(event.target.value)}/>
         </S.DivInput>
         <S.DivButton>
           {localStorage.getItem("@borala:token") ? (
