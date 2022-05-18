@@ -1,23 +1,33 @@
-import { Link } from "react-router-dom";
-import Input from "../../components/Input";
-import Button from "../../components/Button";
 import {
   AnimationContainer,
   Background,
   Container,
   Content,
   ErrorSpan,
-  DivInputs
+  DivInputs,
+  AiEye,
+  AiEyeInvisible,
 } from "./style";
+
+import BoraLaLogo from "../../assets/boralalogo.png";
+import Input from "../../components/Input";
+import Button from "../../components/Button";
+import api from "../../service/api";
+
+import { Link, useHistory } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import * as yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
-import api from "../../service/api";
 import { toast } from "react-toastify";
-import { useHistory } from "react-router-dom";
-import BoraLaLogo from "../../assets/boralalogo.png";
+import { useState } from "react";
 
 const Signup = () => {
+  const [visible, setVisible] = useState(true);
+
+  const passwordVisible = () => {
+    setVisible(!visible);
+  };
+
   const signupSchema = yup.object().shape({
     name: yup.string().required("Campo obrigatório!"),
     cnpj: yup.string().required("Campo obrigatório!"),
@@ -94,17 +104,22 @@ const Signup = () => {
               <Input
                 register={register("password")}
                 name="password"
-                type="password"
+                type={visible ? "password" : "text"}
                 placeholder="SENHA"
                 errorMsg={errors.password?.message}
               />
               {errors.password && (
                 <ErrorSpan>{errors.password.message}</ErrorSpan>
               )}
+              {visible ? (
+                <AiEye onClick={passwordVisible} />
+              ) : (
+                <AiEyeInvisible onClick={passwordVisible} />
+              )}
               <Input
                 register={register("passwordConfirm")}
                 name="passwordConfirm"
-                type="password"
+                type={visible ? "password" : "text"}
                 placeholder="CONFIRMAR SENHA"
                 errorMsg={errors.passwordConfirm?.message}
               />
