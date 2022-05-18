@@ -1,5 +1,31 @@
 import styled, { keyframes } from "styled-components";
 import SignupImage from "../../assets/signup.svg";
+import { AiFillEye } from "react-icons/ai";
+import { AiFillEyeInvisible } from "react-icons/ai";
+
+export const AiEye = styled(AiFillEye)`
+  color: var(--grey);
+  position: relative;
+  top: -32px;
+  left: 100px;
+  cursor: pointer;
+  @media (min-width: 728px) {
+    top: -32px;
+    left: 140px;
+  }
+`;
+export const AiEyeInvisible = styled(AiFillEyeInvisible)`
+  color: var(--grey);
+  position: relative;
+  top: -32px;
+  left: 100px;
+  cursor: pointer;
+  @media (min-width: 728px) {
+    top: -32px;
+    left: 140px;
+  }
+`;
+
 
 export const Container = styled.div`
   height: 100vh;

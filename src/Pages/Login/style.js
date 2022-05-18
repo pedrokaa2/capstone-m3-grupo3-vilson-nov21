@@ -1,5 +1,7 @@
 import styled, { keyframes } from "styled-components";
 import LoginImage from "../../assets/login.svg";
+import { AiFillEye } from "react-icons/ai";
+import { AiFillEyeInvisible } from "react-icons/ai";
 
 export const Container = styled.div `
   height: 100vh;
@@ -96,6 +98,22 @@ export const Inputs = styled.input `
   margin-bottom: 25px;
 `;
 
+export const InputsP = styled.input`
+  background: transparent;
+  align-items: center;
+  flex: 1;
+  height: 100%;
+  background: var(--white);
+  border-radius: 10px;
+  border: 2px solid var(--darkblue);
+  padding: 1rem;
+  height: 52px;
+  width: 80%;
+  transition: 0.4s;
+  margin-bottom: 25px;
+  margin-left: 15px;
+`
+
 export const Error = styled.span `
   color: var(--orange);
 
@@ -105,4 +123,20 @@ export const Error = styled.span `
 export const ButtonLogin = styled.div `
   min-width: 340px;
   max-width: 440px;
+`;
+
+export const AiEye = styled(AiFillEye)`
+  color: var(--grey);
+  position: relative;
+  top: 5px;
+  left: -30px;
+  cursor: pointer;
+
+`;
+export const AiEyeInvisible = styled(AiFillEyeInvisible)`
+  color: var(--grey);
+  position: relative;
+  top: 5px;
+  left: -30px;
+  cursor: pointer;
 `;
