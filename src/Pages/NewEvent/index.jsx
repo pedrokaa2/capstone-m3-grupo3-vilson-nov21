@@ -165,13 +165,3 @@ const NewEvent = ({ isEditting }) => {
 };
 
 export default NewEvent;
-
-//TESTAR HOME
-// const history = useHistory();
-
-//   api
-//     .get("/events/")
-//     .then((response) => {
-//       history.push("/editEvent", response.data);
-//     })
-//     .catch((r) => console.log(r));
