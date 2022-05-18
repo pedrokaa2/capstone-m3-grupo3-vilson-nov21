@@ -20,6 +20,7 @@ import {
   ButtonLogin,
   AiEye,
   AiEyeInvisible,
+  ErrorSpan,
 } from "./style";
 
 const Login = () => {
@@ -33,11 +34,7 @@ const Login = () => {
 
   const history = useHistory();
 
-  const formSchema = yup.object().shape({
-    email: yup.string().required("Email obrigatório").email("Email inválido"),
-
-    password: yup.string().required("Senha obrigatória"),
-  });
+  const formSchema = yup.object().shape({});
   const {
     register,
     handleSubmit,
@@ -67,7 +64,7 @@ const Login = () => {
               </p>
               <Inputs type="text" placeholder="EMAIL" {...register("email")} />
 
-              <Error>{errors.email?.message}</Error>
+              {errors.email && <ErrorSpan>{errors.email.message}</ErrorSpan>}
               <InputsP
                 type={visible ? "password" : "text"}
                 placeholder="SENHA"
