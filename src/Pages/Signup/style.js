@@ -104,6 +104,13 @@ export const AnimationContainer = styled.div`
     }
   }
 
+  button {
+    :hover {
+      cursor: pointer;
+      opacity: 70%;
+    }
+  }
+
   @media (min-width: 768px){
     form {
       width: 340px;

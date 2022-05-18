@@ -128,7 +128,7 @@ const Signup = () => {
               )}
             </DivInputs>
             <div>
-              <Button type="submit">ENTRAR</Button>
+              <Button type="submit">CADASTRAR</Button>
             </div>
           </form>
         </AnimationContainer>

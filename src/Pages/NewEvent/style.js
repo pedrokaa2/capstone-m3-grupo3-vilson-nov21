@@ -17,8 +17,18 @@ export const SpanNovoEvento = styled.span`
   font-weight: bold;
   font-size: 14px;
 
+    :hover {
+      cursor: pointer;
+      opacity: 70%;
+    }
+
   a {
     color: var(--darkblue);
+
+    :hover {
+      cursor: pointer;
+      opacity: 70%;
+    }
   }
 
   @media (min-width: 764px) {

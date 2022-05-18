@@ -12,11 +12,17 @@ export const Header = styled.header`
     text-transform: uppercase;
     color: var(--darkblue);
     font-weight: 800;
+
+    :hover {
+      cursor: pointer;
+      opacity: 70%;
+    }
   }
 
   @media (min-width: 764px) {
     padding: 0 40px;
   }
+
 `;
 
 export const UL = styled.ul`

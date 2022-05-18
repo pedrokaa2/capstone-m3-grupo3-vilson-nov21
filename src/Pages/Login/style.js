@@ -122,6 +122,11 @@ export const Error = styled.span`
 export const ButtonLogin = styled.div`
   min-width: 340px;
   max-width: 440px;
+
+  :hover {
+    cursor: pointer;
+    opacity: 70%;
+  }
 `;
 
 export const AiEye = styled(AiFillEye)`

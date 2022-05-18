@@ -14,6 +14,12 @@ export const DisplayMenuDesk = styled.div `
       display: flex;
       justify-content: center;
       width: 120px;
+
+      :hover {
+        cursor: pointer;
+        border: 1px solid var(--darkblue);
+        border-radius: 20px;
+      }
     }
   }
 `
@@ -68,5 +74,10 @@ export const DivButton = styled.div `
     padding: 10px 20px;
     font-size: 14px;
     border-radius: 20px;
+
+    :hover {
+      opacity: 70%;
+      cursor: pointer;
+    }
   }
 `
