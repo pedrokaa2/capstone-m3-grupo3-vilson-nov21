@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import EventImg from "../../assets/boralaquadroedicao.png";
 
-export const Header = styled.header `
+export const Header = styled.header`
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -17,21 +17,18 @@ export const Header = styled.header `
   @media (min-width: 764px) {
     padding: 0 40px;
   }
-
 `;
 
-export const UL = styled.ul `
+export const UL = styled.ul`
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   align-items: center;
 `;
 
-export const Li = styled.li `
-  list-style: none;
-`;
+export const Li = styled.div``;
 
-export const Logo = styled.img `
+export const Logo = styled.img`
   width: 150px;
   height: 40px;
   @media (min-width: 764px) {
@@ -40,13 +37,13 @@ export const Logo = styled.img `
   }
 `;
 
-export const SpanMeusEventos = styled.span `
+export const SpanMeusEventos = styled.span`
   color: var(--orange);
   font-weight: bold;
   font-size: 14px;
 
   a {
-    color: var(--darkblue)
+    color: var(--darkblue);
   }
 
   @media (min-width: 764px) {
@@ -54,7 +51,7 @@ export const SpanMeusEventos = styled.span `
   }
 `;
 
-export const ImgEvent = styled.div `
+export const ImgEvent = styled.div`
   width: 100%;
   min-height: 250px;
   background-color: var(--somewhatblue);
@@ -65,7 +62,7 @@ export const ImgEvent = styled.div `
   max-height: 500px;
 `;
 
-export const CardBox = styled.div `
+export const CardBox = styled.div`
   display: flex;
   height: auto;
   overflow-x: scroll;
@@ -97,7 +94,7 @@ export const CardBox = styled.div `
   }
 `;
 
-export const CardBoxDiv = styled.div `
+export const CardBoxDiv = styled.div`
   display: flex;
   justify-content: center;
   margin-bottom: 15px;
@@ -117,22 +114,19 @@ export const CardBoxDiv = styled.div `
   }
 `;
 
-export const CardDescription = styled.div `
+export const CardDescription = styled.div`
   h3 {
     color: var(--darkblue);
     font-size: 12px;
     width: 75px;
-    margin: 15px 10px;
+    margin: 15px 0;
     text-transform: capitalize;
     text-align: center;
   }
   h4 {
     color: var(--orange);
-    margin-right: 3px;
     font-size: 12px;
-    margin-left: 11px;
     text-align: center;
-    width: 75px;
   }
   h5 {
     color: var(--blue);
@@ -140,13 +134,13 @@ export const CardDescription = styled.div `
     margin-top: 20px;
     margin-left: 10px;
     text-align: center;
-    width: 75px;
   }
 
   @media (min-width: 1200px) {
-    h3, h4, h5 {
+    h3,
+    h4,
+    h5 {
       font-size: 14px;
-      width: 120px;
     }
   }
 
@@ -173,8 +167,20 @@ export const CardDescription = styled.div `
   }
 `;
 
-export const DivContainer = styled.div `
+export const DivContainer = styled.div`
   display: flex;
   flex-direction: row;
   align-items: center;
+`;
+
+export const EditButton = styled.button`
+  padding: 0 5px;
+  background-color: var(--white);
+  border-radius: 5px;
+  border: 1px var(--darkblue) solid;
+  &:hover {
+    background-color: var(--darkblue);
+    border: 1px var(--white) solid;
+    color: var(--white);
+  }
 `;

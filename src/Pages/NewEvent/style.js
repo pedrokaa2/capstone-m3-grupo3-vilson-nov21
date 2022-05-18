@@ -18,7 +18,7 @@ export const SpanNovoEvento = styled.span`
   font-size: 14px;
 
   a {
-    color: var(--darkblue)
+    color: var(--darkblue);
   }
 
   @media (min-width: 764px) {
@@ -89,7 +89,7 @@ export const Select = styled.select`
   font-family: "Nunito", sans-serif;
   font-size: 1rem;
 
-  @media (min-width: 1024px) {
+  @media (min-width: 764px) {
     width: 338px;
     margin-top: 20px;
   }
@@ -105,6 +105,14 @@ export const ErrorSpan = styled.span`
   margin-bottom: -20px;
   @media (min-width: 1024px) {
   }
+`;
+
+export const ImgEvent = styled.img`
+  width: 200px;
+  display: block;
+  height: auto;
+  margin: 20px auto 0 auto;
+  border-radius: 20px;
 `;
 
 // --orange: #FF5203;

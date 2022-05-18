@@ -1,15 +1,16 @@
+import { Link } from "react-router-dom";
 import styled from "styled-components";
 
-export const DisplayMenuMob = styled.div `
+export const DisplayMenuMob = styled.div`
   display: flex;
 
-  @media (min-width: 1024px){
+  @media (min-width: 1024px) {
     display: none;
   }
-`
+`;
 
-export const HandleMenu = styled.div `
-  display: ${(props) => props.isOpen ? "flex" : "none"};
+export const HandleMenu = styled.div`
+  display: ${(props) => (props.isOpen ? "flex" : "none")};
   background-color: var(--darkblue);
   flex-direction: column;
   justify-content: center;
@@ -20,7 +21,7 @@ export const HandleMenu = styled.div `
   right: 0;
   top: 120px;
   position: absolute;
-  z-index: 1;
+  z-index: 51;
   animation: AppearFromRight 1s;
 
   a {
@@ -29,19 +30,28 @@ export const HandleMenu = styled.div `
     font-size: 14px;
   }
 
-  @keyframes AppearFromRight{
+  @keyframes AppearFromRight {
     from {
-      transform: translateX(100%)
+      transform: translateX(100%);
     }
 
     to {
-      transform: translateX(0%)
+      transform: translateX(0%);
     }
   }
+`;
 
-`
+export const LinkStyled = styled(Link)`
+  border: 1px var(--white) solid;
+  padding: 10px 5px 10px 20px;
+  border-radius: 20px;
+  &:hover {
+    color: var(--darkblue);
+    background-color: var(--white);
+  }
+`;
 
-export const DivSelect = styled.div `
+export const DivSelect = styled.div`
   display: flex;
   width: 100%;
   justify-content: center;
@@ -56,10 +66,13 @@ export const DivSelect = styled.div `
     padding: 10px 3px;
     font-size: 13px;
     width: 95%;
+    &:focus {
+      color: #000;
+    }
   }
-`
+`;
 
-export const DivInput = styled.div `
+export const DivInput = styled.div`
   display: flex;
   gap: 10px;
   align-items: center;
@@ -73,15 +86,15 @@ export const DivInput = styled.div `
     flex: 1;
     border: none;
     font-size: 13px;
-    
+
     ::placeholder {
       color: var(--white);
       opacity: 45%;
     }
   }
-`
+`;
 
-export const DivButton = styled.div `
+export const DivButton = styled.div`
   button {
     background: none;
     color: var(--white);
@@ -89,11 +102,15 @@ export const DivButton = styled.div `
     padding: 10px 20px;
     font-size: 14px;
     border-radius: 20px;
+    &:hover {
+      color: var(--darkblue);
+      background-color: var(--white);
+    }
   }
-`
-export const copyrightSpan = styled.span `
+`;
+export const copyrightSpan = styled.span`
   color: var(--white);
   font-size: 12px;
   text-align: center;
   margin-bottom: 5px;
-`
+`;
