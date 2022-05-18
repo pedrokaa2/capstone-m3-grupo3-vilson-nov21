@@ -1,6 +1,7 @@
 import * as yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { useForm } from "react-hook-form";
+import { useState } from "react";
 import { useHistory } from "react-router-dom";
 import { Link } from "react-router-dom";
 import { useAuthenticated } from "../../Providers/authenticated";
@@ -14,11 +15,20 @@ import {
   Content,
   AnimationContainer,
   Inputs,
+  InputsP,
   Error,
   ButtonLogin,
+  AiEye,
+  AiEyeInvisible,
 } from "./style";
 
 const Login = () => {
+  const [visible, setVisible] = useState(true);
+
+  const passwordVisible = () => {
+    setVisible(!visible);
+  };
+
   const { login } = useAuthenticated();
 
   const history = useHistory();
@@ -52,20 +62,23 @@ const Login = () => {
                 Faça seu <Link to="/signup">cadastro</Link>
               </p>
               <p className="Home">
-                Você não é uma empresa <img src={BoraLaLogo} alt="borala"></img> ?
-                Entre na <Link to="/">Home</Link>
+                Você não é uma empresa <img src={BoraLaLogo} alt="borala"></img>{" "}
+                ? Entre na <Link to="/">Home</Link>
               </p>
               <Inputs type="text" placeholder="EMAIL" {...register("email")} />
 
               <Error>{errors.email?.message}</Error>
-              <Inputs
-                type="password"
+              <InputsP
+                type={visible ? "password" : "text"}
                 placeholder="SENHA"
                 {...register("password")}
               />
-
               <Error>{errors.password?.message}</Error>
-
+              {visible ? (
+                <AiEye onClick={passwordVisible} />
+              ) : (
+                <AiEyeInvisible onClick={passwordVisible} />
+              )}
               <ButtonLogin>
                 <Button type="submit">ENTRAR</Button>
               </ButtonLogin>
