@@ -16,6 +16,7 @@ import {
   Select,
   Form,
   ErrorSpan,
+  ImgEvent,
 } from "./style";
 import LogoImg from "../../assets/boralalogo.png";
 import Input from "../../components/Input";
@@ -26,7 +27,7 @@ const NewEvent = ({ isEditting }) => {
 
   const history = useHistory();
 
-  const actualEvent = isEditting && history.location.state[0];
+  const actualEvent = isEditting && history.location.state;
 
   const formSchema = yup.object().shape({
     name: yup.string().required("Nome é obrigatório"),
@@ -44,7 +45,7 @@ const NewEvent = ({ isEditting }) => {
     resolver: yupResolver(formSchema),
     defaultValues: isEditting && {
       name: actualEvent.name,
-      date: actualEvent.date.split('-').reverse().join('/'),
+      date: actualEvent.date,
       city: actualEvent.city,
       imgUrl: actualEvent.imgUrl,
       eventPage: actualEvent.eventPage,
@@ -68,16 +69,14 @@ const NewEvent = ({ isEditting }) => {
           <Logo src={LogoImg} alt="logo borala" />
         </Link>
         <SpanNovoEvento>
-        <Link to="/myEvents">
-          MEUS EVENTOS
-        </Link>
+          <Link to="/myEvents">MEUS EVENTOS</Link>
         </SpanNovoEvento>
         <SpanNovoEvento>
           {isEditting ? "EDITAR EVENTO" : "NOVO EVENTO"}
         </SpanNovoEvento>
       </Header>
+      {isEditting ? <ImgEvent src={actualEvent.imgUrl} /> : <Cover />}
 
-      <Cover />
       <Form onSubmit={handleSubmit(onSubmitFunction)}>
         <FormContainer>
           <DivForm>
@@ -166,13 +165,3 @@ const NewEvent = ({ isEditting }) => {
 };
 
 export default NewEvent;
-
-//TESTAR HOME
-// const history = useHistory();
-
-//   api
-//     .get("/events/")
-//     .then((response) => {
-//       history.push("/editEvent", response.data);
-//     })
-//     .catch((r) => console.log(r));

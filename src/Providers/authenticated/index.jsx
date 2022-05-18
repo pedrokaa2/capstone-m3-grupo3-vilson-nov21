@@ -19,7 +19,7 @@ export const AuthenticatedProvider = ({ children }) => {
       .post("/login", data)
       .then((response) => {
         const { accessToken, user } = response.data;
-        console.log(response.data);
+
         localStorage.setItem("@borala:token", JSON.stringify(accessToken));
         localStorage.setItem("@borala:userId", JSON.stringify(user.id));
 

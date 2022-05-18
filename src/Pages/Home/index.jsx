@@ -3,41 +3,82 @@ import api from "../../service/api";
 import Logo from "../../img/boralalogo.png";
 import LogoNav from "../../assets/boralanav.png";
 import LocationLogo from "../../assets/locationVector.svg";
-import ImgCard1 from "../../assets/DJHenriqueDeFerrazTeste.svg";
 import { MenuDesktop } from "../../components/MenuDesktop";
 import { MenuMobile } from "../../components/MenuMobile";
 import { useState } from "react";
 import { useEffect } from "react";
 import CardEvent from "../../components/CardEvent";
 
-const Home = () => {
-  
-  const [currentState, setCurrentState] = useState("")
-  const [currentInput, setCurrentInput] = useState("")
+import jwtDecode from "jwt-decode";
+import { useEvent } from "../../Providers/event";
+import { useHistory } from "react-router-dom";
 
-  const [events, setEvents] = useState([])
+const Home = () => {
+  const [currentState, setCurrentState] = useState("Selecione seu Estado");
+  const [currentInput, setCurrentInput] = useState("");
+
+  const [events, setEvents] = useState([]);
+
+  const history = useHistory();
+
+  const token = JSON.parse(localStorage.getItem("@borala:token"));
+
+  const tokenId = token ? Number(jwtDecode(token).sub) : null;
+
+  const { editEvent } = useEvent();
+
+  const states = {
+    AC: "Acre",
+    AL: "Alagoas",
+    AP: "Amapá",
+    AM: "Amazonas",
+    BA: "Bahia",
+    CE: "Ceará",
+    DF: "Distrito Federal",
+    ES: "Espírito Santo",
+    GO: "Goías",
+    MA: "Maranhão",
+    MT: "Mato Grosso",
+    MS: "Mato Grosso do Sul",
+    MG: "Minas Gerais",
+    PA: "Pará",
+    PB: "Paraíba",
+    PR: "Paraná",
+    PE: "Pernambuco",
+    PI: "Piauí",
+    RJ: "Rio de Janeiro",
+    RN: "Rio Grande do Norte",
+    RS: "Rio Grande do Sul",
+    RO: "Rondônia",
+    RR: "Roraíma",
+    SC: "Santa Catarina",
+    SP: "São Paulo",
+    SE: "Sergipe",
+    TO: "Tocantins",
+  };
 
   useEffect(() => {
-    if(currentInput === ""){
-      api.get(`/events/`).then(response => {
-        if(currentState === ""){
-          setEvents(response.data)
-          console.log(response.data)
-        }else{
-          const filteredEvents = response.data.filter((event) => (
-            event.state === currentState
-          ))
-          setEvents(filteredEvents)
+    if (currentInput === "") {
+      api.get(`/events/`).then((response) => {
+        if (currentState === "Selecione seu Estado") {
+          setEvents(response.data);
+        } else {
+          const filteredEvents = response.data.filter(
+            (event) => event.state === currentState
+          );
+          setEvents(filteredEvents);
         }
-      })
-    }else{
-      const filteredEvents = events.filter((event) => (
-        event.city.includes(currentInput) || event.name.includes(currentInput)
-      )) 
-      console.log(filteredEvents)
-      setEvents(filteredEvents)
+      });
+    } else {
+      const filteredEvents = events.filter(
+        (event) =>
+          event.city.toUpperCase().includes(currentInput.toUpperCase()) ||
+          event.name.toUpperCase().includes(currentInput.toUpperCase())
+      );
+
+      setEvents(filteredEvents);
     }
-  }, [currentState, currentInput])
+  }, [currentState, currentInput]);
 
   return (
     <div>
@@ -45,10 +86,14 @@ const Home = () => {
         <figure>
           <img src={Logo} alt="Logo"></img>
         </figure>
-        <MenuDesktop 
-        setCurrentState={setCurrentState}
-        setCurrentInput={setCurrentInput} />
-        <MenuMobile setCurrentState={setCurrentState} />
+        <MenuDesktop
+          setCurrentState={setCurrentState}
+          setCurrentInput={setCurrentInput}
+        />
+        <MenuMobile
+          setCurrentState={setCurrentState}
+          setCurrentInput={setCurrentInput}
+        />
       </S.Header>
       <S.DivMain>
         <main>
@@ -61,24 +106,31 @@ const Home = () => {
           <S.LocationDiv>
             <img src={LocationLogo} alt="location"></img>
             <h2>
-              {currentState !== "" ? currentState : "Selecione seu Estado"}
+              {currentState !== "Selecione seu Estado"
+                ? states[currentState]
+                : "Selecione seu Estado"}
             </h2>
           </S.LocationDiv>
           <S.CardBox>
             {events.map((event) => (
-              <S.CardBoxDiv
-              key={event.id}
-              >
-                <img src={event.imgUrl} alt={event.name} />
+              <S.CardBoxDiv key={event.id}>
+                <img
+                  src={event.imgUrl}
+                  alt={event.name}
+                  onClick={() => window.location.assign(event.eventPage)}
+                />
                 <S.cardDescription>
                   <CardEvent
-                  date={event.date.split('-').reverse().join('/')}
-                  address={event.address}
-                  name={event.name}
-                  city={event.city}
-                  state={event.state}
+                    date={event.date.split("-").reverse().join("/")}
+                    address={event.address}
+                    name={event.name}
+                    city={event.city}
+                    state={event.state}
                   />
                 </S.cardDescription>
+                {tokenId == event.userId && (
+                  <S.editIcon onClick={() => editEvent(event)} />
+                )}
               </S.CardBoxDiv>
             ))}
           </S.CardBox>
