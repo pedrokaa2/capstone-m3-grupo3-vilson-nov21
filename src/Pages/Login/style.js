@@ -3,13 +3,13 @@ import LoginImage from "../../assets/login.svg";
 import { AiFillEye } from "react-icons/ai";
 import { AiFillEyeInvisible } from "react-icons/ai";
 
-export const Container = styled.div `
+export const Container = styled.div`
   height: 100vh;
   display: flex;
   align-items: stretch;
 `;
 
-export const Background = styled.div `
+export const Background = styled.div`
   @media (min-width: 768px) {
     flex: 1;
     background: url(${LoginImage}) no-repeat center var(--lightblue);
@@ -20,7 +20,7 @@ export const Background = styled.div `
   }
 `;
 
-export const Content = styled.div `
+export const Content = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -33,7 +33,7 @@ export const Content = styled.div `
   }
 `;
 
-const appearFromRight = keyframes `
+const appearFromRight = keyframes`
 from {
     opacity: 0;
     transform: translateX(50px);
@@ -43,7 +43,7 @@ to {
     transform: translateX(0px);
 }
 `;
-export const AnimationContainer = styled.div `
+export const AnimationContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -79,11 +79,10 @@ export const AnimationContainer = styled.div `
     img {
       width: 17%;
     }
-    
   }
 `;
 
-export const Inputs = styled.input `
+export const Inputs = styled.input`
   background: transparent;
   align-items: center;
   flex: 1;
@@ -112,15 +111,15 @@ export const InputsP = styled.input`
   transition: 0.4s;
   margin-bottom: 25px;
   margin-left: 15px;
-`
+`;
 
-export const Error = styled.span `
+export const Error = styled.span`
   color: var(--orange);
 
   font-size: 15px;
 `;
 
-export const ButtonLogin = styled.div `
+export const ButtonLogin = styled.div`
   min-width: 340px;
   max-width: 440px;
 `;
@@ -131,7 +130,6 @@ export const AiEye = styled(AiFillEye)`
   top: 5px;
   left: -30px;
   cursor: pointer;
-
 `;
 export const AiEyeInvisible = styled(AiFillEyeInvisible)`
   color: var(--grey);
@@ -139,4 +137,16 @@ export const AiEyeInvisible = styled(AiFillEyeInvisible)`
   top: 5px;
   left: -30px;
   cursor: pointer;
+`;
+
+export const ErrorSpan = styled.span`
+  color: var(--orange);
+  background-color: var(--white);
+  padding: 0 5px;
+  z-index: 50;
+  position: relative;
+  top: -200px;
+  left: -200px;
+
+  margin-bottom: -20px;
 `;
