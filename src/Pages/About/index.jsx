@@ -103,7 +103,7 @@ const About = () => {
                   <S.cardOneThirdSon>
                     <a
                       type="button"
-                      href="https://www.linkedin.com/in/rafael-halquema-398443137/"
+                      href="https://www.linkedin.com/in/rafael-francisco-halquema-dos-santos-398443137/"
                     >
                       {" "}
                       <FaLinkedin />
@@ -169,14 +169,7 @@ const About = () => {
                   <S.cardOneThirdSon>
                     <a
                       type="button"
-                      href="https://www.linkedin.com/in/william-damasio-62a6841a2/"
-                    >
-                      {" "}
-                      <FaLinkedin />
-                    </a>
-                    <a
-                      type="button"
-                      href="https://github.com/WHansD"
+                      href="https://github.com/AcasaDAcolina"
                     >
                       {" "}
                       <FaGithub />
@@ -200,14 +193,14 @@ const About = () => {
                   <S.cardOneThirdSon>
                     <a
                       type="button"
-                      href="https://www.linkedin.com/in/rafael-halquema-398443137/"
+                      href="https://www.linkedin.com/in/lucas-corr%C3%AAa-de-oliveira-a28789214/"
                     >
                       {" "}
                       <FaLinkedin />
                     </a>
                     <a
                       type="button"
-                      href="https://github.com/rafaelfhsantos"
+                      href="https://github.com/lucascorreaog"
                     >
                       {" "}
                       <FaGithub />
