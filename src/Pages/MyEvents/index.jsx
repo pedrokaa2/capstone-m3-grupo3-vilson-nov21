@@ -30,7 +30,7 @@ const MyEvents = () => {
           <Logo src={LogoImg} alt="logo borala" />
         </Link>
         <SpanMeusEventos>
-          <Link to="/myEvents">MEUS EVENTOS</Link>
+          MEUS EVENTOS
         </SpanMeusEventos>
       </S.Header>
       <ImgEvent />

@@ -17,11 +17,6 @@ export const SpanNovoEvento = styled.span`
   font-weight: bold;
   font-size: 14px;
 
-    :hover {
-      cursor: pointer;
-      opacity: 70%;
-    }
-
   a {
     color: var(--darkblue);
 
@@ -124,9 +119,3 @@ export const ImgEvent = styled.img`
   margin: 20px auto 0 auto;
   border-radius: 20px;
 `;
-
-// --orange: #FF5203;
-// --blue: #27B5DD;
-// --lightblue: #9ED9EA;
-// --darkblue: #252642;
-// --white: #FFFFFF;

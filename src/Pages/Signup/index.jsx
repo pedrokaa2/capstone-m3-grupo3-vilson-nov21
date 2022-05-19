@@ -29,22 +29,22 @@ const Signup = () => {
   };
 
   const signupSchema = yup.object().shape({
-    name: yup.string().required("Campo obrigatório!"),
-    cnpj: yup.string().required("Campo obrigatório!"),
-    email: yup.string().email("Email inválido").required("Campo obrigatório!"),
+    name: yup.string().required("Nome obrigatório!"),
+    cnpj: yup.string().min(14, "Mínimo de 14 dígitos").required("CNPJ obrigatório!"),
+    email: yup.string().email("Email inválido").required("Email obrigatório!"),
     password: yup
       .string()
+      .required("Senha obrigatória!")
       .min(8, "Mínimo de 8 dígitos")
       .matches(/[a-z]/, "Deve conter uma letra minúscula")
       .matches(/[A-Z]/, "Deve conter uma letra maiúscula")
       .matches(/[0-9]/, "Deve conter um número")
       .matches(/\W/, "Deve conter um caractere especial")
-      .matches(/^(?!.*\s).{0,}$/, "Não pode conter espaços")
-      .required("Campo obrigatório!"),
+      .matches(/^(?!.*\s).{0,}$/, "Não pode conter espaços"),
     passwordConfirm: yup
       .string()
-      .oneOf([yup.ref("password")], "Senhas diferentes")
-      .required("Campo obrigatório!"),
+      .required("Senhas divergentes")
+      .oneOf([yup.ref("password")], "Senhas diferentes"),
   });
 
   const {
@@ -77,7 +77,7 @@ const Signup = () => {
             <h1>CADASTRO</h1>
             <p>
               Já tem uma conta <img src={BoraLaLogo} alt="borala"></img> ? Faça
-              seu <Link to="/login">login</Link>
+              seu <Link to="/login">Login</Link>
             </p>
             <DivInputs>
               <Input

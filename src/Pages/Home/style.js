@@ -169,6 +169,7 @@ export const cardDescription = styled.div`
     color: var(--orange);
     margin-right: 3px;
     font-size: 12px;
+    text-transform: capitalize;
   }
   h5 {
     color: var(--blue);
