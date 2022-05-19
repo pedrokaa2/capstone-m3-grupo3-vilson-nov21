@@ -198,3 +198,99 @@ export const RemoveButton = styled.button`
     color: var(--white);
   }
 `;
+
+export const ConfirmModal = styled.div`
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  padding-top: 100px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0, 0, 0); /* Fallback color */
+  background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
+`;
+
+export const ModalMaterial = styled.div`
+  position: relative;
+  background-color: #fefefe;
+  margin: auto;
+  padding-bottom: 10px;
+  border: none;
+  border-radius: 10px;
+  width: 80%;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  -webkit-animation-name: animatetop;
+  -webkit-animation-duration: 0.4s;
+  animation-name: animatetop;
+  animation-duration: 0.4s;
+
+  @keyframes animatetop {
+    from {
+      top: -300px;
+      opacity: 0;
+    }
+    to {
+      top: 0;
+      opacity: 1;
+    }
+  }
+`;
+
+export const ModalLock = styled.span`
+  color: white;
+  font-size: 28px;
+  font-weight: bold;
+
+  &:hover,
+  &:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+  }
+`;
+
+export const ModalTitle = styled.div`
+  margin-bottom: 10px;
+  padding: 5px 16px;
+  text-align: center;
+  display: flex;
+  justify-content: space-around;
+  background-color: var(--darkblue);
+  color: white;
+`;
+
+export const ModalBody = styled.div`
+  display: flex;
+  justify-content: space-around;
+  padding: 2px 16px;
+`;
+
+export const YesButton = styled.div`
+  color: var(--white);
+  background-color: var(--darkblue);
+  border-radius: 5px;
+  padding: 5px 10px;
+  border: none;
+  &:hover {
+    cursor: pointer;
+    color: var(--darkblue);
+    background-color: var(--white);
+    border: 1px solid var(--darkblue);
+  }
+`;
+
+export const NoButton = styled.div`
+  color: var(--white);
+  background-color: var(--orange);
+  border-radius: 5px;
+  padding: 5px 10px;
+  border: none;
+  &:hover {
+    cursor: pointer;
+    color: var(--orange);
+    background-color: var(--white);
+    border: 1px solid var(--orange);
+  }
+`;
