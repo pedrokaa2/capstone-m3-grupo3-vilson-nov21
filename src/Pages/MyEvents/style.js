@@ -184,3 +184,17 @@ export const EditButton = styled.button`
     color: var(--white);
   }
 `;
+
+export const RemoveButton = styled.button`
+  padding: 0 5px;
+  margin-top: 5px;
+  background-color: var(--white);
+  border-radius: 5px;
+  border: 1px var(--orange) solid;
+  color: var(--orange);
+  &:hover {
+    background-color: var(--orange);
+    border: 1px var(--white) solid;
+    color: var(--white);
+  }
+`;

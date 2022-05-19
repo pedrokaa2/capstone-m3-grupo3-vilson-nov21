@@ -11,15 +11,13 @@ import CardEvent from "../../components/CardEvent";
 
 import jwtDecode from "jwt-decode";
 import { useEvent } from "../../Providers/event";
-import { useHistory } from "react-router-dom";
 
 const Home = () => {
   const [currentState, setCurrentState] = useState("Selecione seu Estado");
   const [currentInput, setCurrentInput] = useState("");
 
+  const [filteredEvents, setFilteredEvents] = useState([]);
   const [events, setEvents] = useState([]);
-
-  const history = useHistory();
 
   const token = JSON.parse(localStorage.getItem("@borala:token"));
 
@@ -58,26 +56,29 @@ const Home = () => {
   };
 
   useEffect(() => {
-    if (currentInput === "") {
-      api.get(`/events/`).then((response) => {
-        if (currentState === "Selecione seu Estado") {
-          setEvents(response.data);
-        } else {
-          const filteredEvents = response.data.filter(
-            (event) => event.state === currentState
-          );
-          setEvents(filteredEvents);
-        }
-      });
-    } else {
-      const filteredEvents = events.filter(
-        (event) =>
-          event.city.toUpperCase().includes(currentInput.toUpperCase()) ||
-          event.name.toUpperCase().includes(currentInput.toUpperCase())
-      );
+    api
+      .get("/events")
+      .then((response) => {
+        setEvents(response.data);
+        setFilteredEvents(response.data);
+      })
+      .catch((response) => console.log(response));
+  }, []);
 
-      setEvents(filteredEvents);
-    }
+  useEffect(() => {
+    setFilteredEvents(
+      events
+        .filter(
+          (event) =>
+            event.city.toUpperCase().includes(currentInput.toUpperCase()) ||
+            event.name.toUpperCase().includes(currentInput.toUpperCase())
+        )
+        .filter((eventState) =>
+          currentState !== "Selecione seu Estado"
+            ? eventState.state === currentState
+            : true
+        )
+    );
   }, [currentState, currentInput]);
 
   return (
@@ -112,7 +113,7 @@ const Home = () => {
             </h2>
           </S.LocationDiv>
           <S.CardBox>
-            {events.map((event) => (
+            {filteredEvents.map((event) => (
               <S.CardBoxDiv key={event.id}>
                 <img
                   src={event.imgUrl}
