@@ -10,13 +10,15 @@ import {
   UL,
   DivContainer,
   EditButton,
+  RemoveButton,
 } from "./style";
 import { Link } from "react-router-dom";
 import LogoImg from "../../assets/boralalogo.png";
 
 const MyEvents = () => {
-  const { eventList, editEvent } = useEvent();
+  const { eventList, editEvent, removeEvent } = useEvent();
   const [myEvents, setmyEvents] = useState([]);
+
   useEffect(() => {
     eventList().then((listaEventos) => {
       setmyEvents(listaEventos);
@@ -29,9 +31,7 @@ const MyEvents = () => {
         <Link to="/">
           <Logo src={LogoImg} alt="logo borala" />
         </Link>
-        <SpanMeusEventos>
-          MEUS EVENTOS
-        </SpanMeusEventos>
+        <SpanMeusEventos>MEUS EVENTOS</SpanMeusEventos>
       </S.Header>
       <ImgEvent />
 
@@ -60,6 +60,9 @@ const MyEvents = () => {
                   <S.Li>
                     <h5>{listEvents.date.split("-").reverse().join("/")}</h5>
                   </S.Li>
+                  <RemoveButton onClick={() => removeEvent(listEvents.id)}>
+                    Excluir
+                  </RemoveButton>
                 </S.CardDescription>
               </DivContainer>
             );
