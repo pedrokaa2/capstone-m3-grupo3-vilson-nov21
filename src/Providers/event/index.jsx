@@ -1,4 +1,4 @@
-import { createContext, useContext } from "react";
+import { createContext, useContext, useState } from "react";
 import api from "../../service/api";
 import { toast } from "react-toastify";
 import jwt_decode from "jwt-decode";
@@ -7,7 +7,30 @@ import { useHistory } from "react-router-dom";
 export const EventContext = createContext();
 
 export const EventProvider = ({ children }) => {
+  // const removeEvent = (id) => {
+  //   api.delete(`/events/${id}`)
+  // };
+
   const history = useHistory();
+
+  const removeEvent = (id) => {
+    const token = JSON.parse(localStorage.getItem("@borala:token"));
+    const config = {
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
+    };
+    api
+      .delete(`/events/${id}`, config)
+      .then(() => {
+        toast.warning("Evento removido!");
+        history.push("/");
+      })
+      .catch((err) => {
+        console.log(err);
+        toast.error("Algo errado ocorreu!");
+      });
+  };
 
   const eventRegister = (data, history) => {
     const token = JSON.parse(localStorage.getItem("@borala:token"));
@@ -77,7 +100,7 @@ export const EventProvider = ({ children }) => {
 
   return (
     <EventContext.Provider
-      value={{ eventRegister, eventList, eventUpdate, editEvent }}
+      value={{ eventRegister, eventList, eventUpdate, editEvent, removeEvent }}
     >
       {" "}
       {children}{" "}
