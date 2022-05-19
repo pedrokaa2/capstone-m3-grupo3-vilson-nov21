@@ -56,7 +56,7 @@ const Login = () => {
               <h1>LOGIN</h1>
               <p>
                 Não tem uma conta <img src={BoraLaLogo} alt="borala"></img> ?
-                Faça seu <Link to="/signup">cadastro</Link>
+                Faça seu <Link to="/signup">Cadastro</Link>
               </p>
               <p className="Home">
                 Você não é uma empresa <img src={BoraLaLogo} alt="borala"></img>{" "}

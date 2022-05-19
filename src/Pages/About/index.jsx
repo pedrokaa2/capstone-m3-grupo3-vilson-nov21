@@ -169,6 +169,13 @@ const About = () => {
                   <S.cardOneThirdSon>
                     <a
                       type="button"
+                      href="https://www.linkedin.com/in/vinicius-nunes-9584a823b/"
+                    >
+                      {" "}
+                      <FaLinkedin />
+                    </a>
+                    <a
+                      type="button"
                       href="https://github.com/AcasaDAcolina"
                     >
                       {" "}
@@ -217,3 +224,4 @@ const About = () => {
 };
 
 export default About;
+
